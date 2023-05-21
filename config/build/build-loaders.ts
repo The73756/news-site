@@ -15,11 +15,10 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
           import: true,
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes(".module.")),
-            localIdentName: isDev ? "[name]__[local]-[hash:8]" : "[hash:base:8]",
+            localIdentName: isDev ? "[name]__[local]-[hash:8]" : "[hash:8]",
           },
         },
       },
-      "sass-loader",
       "postcss-loader",
     ],
   };
