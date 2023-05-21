@@ -1,9 +1,18 @@
 /** @type {import("tailwindcss").Config} */
 
+/**
+ *  After theme changes you need to update app/theme-providers/theme-context.ts and add the new theme to the Theme enum
+ *
+ * */
+
 export default {
   content: ["./src/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      spacing: {
+        navbar: "4rem",
+      },
+    },
   },
   daisyui: {
     themes: ["winter", "night"],
