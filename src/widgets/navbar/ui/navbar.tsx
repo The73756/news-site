@@ -10,7 +10,7 @@ export const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={cls("navbar h-navbar bg-base-300 px-8", {}, [className])}>
       <div className="flex-1">
-        <AppLink to="/" className="btn btn-ghost normal-case text-xl">
+        <AppLink to="/" className="btn-ghost btn text-xl normal-case">
           News site
         </AppLink>
         <ThemeSwitcher />

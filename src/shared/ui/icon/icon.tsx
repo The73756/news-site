@@ -15,7 +15,7 @@ export const Icon = ({ name, className, viewBox, ...props }: IconProps) => {
 
   return (
     <svg
-      className={cls("select-none fill-current w-[1em] h-[1em] inline-block text-inherit", {}, [
+      className={cls("inline-block h-[1em] w-[1em] select-none fill-current text-inherit", {}, [
         className,
       ])}
       viewBox={viewBox}
