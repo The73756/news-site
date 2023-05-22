@@ -4,9 +4,11 @@
   "scripts": {
     "dev": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
-    "build:dev": "webpack --env mode=development"
+    "build:dev": "webpack --env mode=development",
+    "svg": "npx sprite --group --root src/shared/assets/icons -o public/sprite -d src/shared/ui/icon/sprite-definitions.ts --reset-color-values '#000,#000000, black, white, #fff, #ffffff'"
   },
   "devDependencies": {
+    "@neodx/svg": "^0.1.9",
     "@types/node": "^20.2.1",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
@@ -20,6 +22,7 @@
     "postcss": "^8.4.23",
     "postcss-loader": "^7.3.0",
     "postcss-preset-env": "^8.4.1",
+    "prettier": "^2.8.8",
     "style-loader": "^3.3.3",
     "tailwindcss": "^3.3.2",
     "ts-loader": "^9.2.6",

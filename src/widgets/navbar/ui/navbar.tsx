@@ -1,5 +1,6 @@
 import { cls } from "@/shared/lib";
 import { AppLink } from "@/shared/ui";
+import { ThemeSwitcher } from "@/shared/ui";
 
 interface NavbarProps {
   className?: string;
@@ -12,6 +13,7 @@ export const Navbar = ({ className }: NavbarProps) => {
         <AppLink to="/" className="btn btn-ghost normal-case text-xl">
           News site
         </AppLink>
+        <ThemeSwitcher />
       </div>
       <div>
         <AppLink to="/" className="mr-2">
