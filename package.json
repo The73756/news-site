@@ -5,9 +5,12 @@
     "dev": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
+    "postinstall": "typewind generate",
     "svg": "npx sprite --group --root src/shared/assets/icons -o public/sprite -d src/shared/ui/icon/sprite-definitions.ts --reset-color-values '#000,#000000, black, white, #fff, #ffffff'"
   },
   "devDependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
     "@neodx/svg": "^0.1.9",
     "@types/node": "^20.2.1",
     "@types/react": "^17.0.39",
@@ -16,6 +19,8 @@
     "@types/webpack": "^5.28.1",
     "@types/webpack-dev-server": "^4.7.2",
     "autoprefixer": "^10.4.14",
+    "babel-loader": "^9.1.2",
+    "clear-module": "^4.1.2",
     "css-loader": "^6.7.4",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.6",
@@ -29,11 +34,12 @@
     "ts-loader": "^9.2.6",
     "ts-node": "^10.5.0",
     "typescript": "^5.0.4",
-    "webpack": "^5.83.1",
+    "webpack": "^5.84.0",
     "webpack-cli": "^5.1.1",
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
+    "class-variance-authority": "^0.6.0",
     "daisyui": "^2.51.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",

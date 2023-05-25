@@ -5,8 +5,10 @@
  *
  * */
 
-export default {
-  content: ["./src/**/*.tsx"],
+module.exports = {
+  content: {
+    files: ["./src/**/*.tsx"],
+  },
   theme: {
     extend: {
       spacing: {
