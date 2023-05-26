@@ -9,7 +9,8 @@ const button = cva("btn", {
     },
     size: {
       normal: [""],
-      big: ["btn-xl text-xl"],
+      large: ["btn-xl text-xl"],
+      small: ["btn-sm text-sm"],
     },
   },
   compoundVariants: [{ shape: "default", size: "normal" }],

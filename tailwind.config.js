@@ -12,7 +12,7 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        navbar: "4rem",
+        navbar: "var(--navbar-h)",
       },
     },
   },
