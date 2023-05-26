@@ -2,6 +2,7 @@ import webpack from "webpack";
 import { BuildOptions } from "./types/config";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import svg from "@neodx/svg/webpack";
 
 export const buildPlugins = ({ paths }: BuildOptions): webpack.WebpackPluginInstance[] => {
   return [
@@ -12,6 +13,15 @@ export const buildPlugins = ({ paths }: BuildOptions): webpack.WebpackPluginInst
     new MiniCssExtractPlugin({
       filename: "css/[name].[contenthash:8].css",
       chunkFilename: "css/[name].[contenthash:8].css",
+    }),
+    svg({
+      root: "src/shared/assets/icons",
+      output: "public/sprite",
+      definitions: "src/shared/ui/icon/sprite-definitions.ts",
+      group: true,
+      resetColors: {
+        replaceUnknown: "currentColor",
+      },
     }),
   ];
 };

@@ -4,14 +4,12 @@
   "scripts": {
     "dev": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
-    "build:dev": "webpack --env mode=development",
-    "postinstall": "typewind generate",
-    "svg": "npx sprite --group --root src/shared/assets/icons -o public/sprite -d src/shared/ui/icon/sprite-definitions.ts --reset-color-values '#000,#000000, black, white, #fff, #ffffff'"
+    "build:dev": "webpack --env mode=development"
   },
   "devDependencies": {
     "@babel/core": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
-    "@neodx/svg": "^0.1.9",
+    "@neodx/svg": "^0.2.0",
     "@types/node": "^20.2.1",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
