@@ -1,13 +1,13 @@
-import { cls } from "@/shared/lib";
-import { AppLink } from "@/shared/ui";
+import { cls } from '@/shared/lib'
+import { AppLink } from '@/shared/ui'
 
 interface NavbarProps {
-  className?: string;
+  className?: string
 }
 
 export const Navbar = ({ className }: NavbarProps) => {
   return (
-    <nav className={cls("navbar h-navbar bg-base-300 px-8", {}, [className])}>
+    <nav className={cls('navbar h-navbar bg-base-300 px-8', {}, [className])}>
       <ul className="w-full">
         <li className="flex-1">
           <AppLink to="/" className="btn-ghost btn text-xl normal-case">
@@ -22,5 +22,5 @@ export const Navbar = ({ className }: NavbarProps) => {
         </li>
       </ul>
     </nav>
-  );
-};
+  )
+}

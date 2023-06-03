@@ -1,12 +1,12 @@
-import "./styles/main.css";
-import { Suspense } from "react";
-import { useTheme } from "@/app/providers/theme-provider";
-import { AppRouter } from "@/app/providers/router";
-import { Navbar } from "@/widgets/navbar";
-import { Sidebar } from "@/widgets/sidebar";
+import './styles/main.css'
+import { Suspense } from 'react'
+import { AppRouter } from '@/app/providers/router'
+import { useTheme } from '@/app/providers/theme-provider'
+import { Navbar } from '@/widgets/navbar'
+import { Sidebar } from '@/widgets/sidebar'
 
 export const App = () => {
-  const { theme } = useTheme();
+  const { theme } = useTheme()
 
   return (
     <div data-theme={theme} className="app">
@@ -20,5 +20,5 @@ export const App = () => {
         </div>
       </Suspense>
     </div>
-  );
-};
+  )
+}

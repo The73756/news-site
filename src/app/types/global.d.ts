@@ -1,9 +1,9 @@
-declare module "*.css" {
+declare module '*.css' {
   interface IClassNames {
-    [className: string]: string;
+    [className: string]: string
   }
-  const classNames: IClassNames;
-  export = classNames;
+  const classNames: IClassNames
+  export = classNames
 }
 
-declare const __IS_DEV__: boolean;
+declare const WEBPACK_IS_DEV: boolean

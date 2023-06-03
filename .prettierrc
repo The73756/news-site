@@ -1,10 +1,7 @@
 {
-  "tabWidth": 2,
-  "singleQuote": false,
-  "trailingComma": "all",
-  "semi": true,
-  "bracketSameLine": true,
   "printWidth": 100,
-  "quoteProps": "consistent",
-  "endOfLine": "auto"
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "quoteProps": "consistent"
 }

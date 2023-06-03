@@ -1,2 +1,2 @@
-export { ThemeProvider } from "./ui";
-export * from "./lib";
+export * from './lib'
+export { ThemeProvider } from './ui'

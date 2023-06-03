@@ -7,17 +7,17 @@
 
 module.exports = {
   content: {
-    files: ["./src/**/*.tsx"],
+    files: ['./src/**/*.tsx'],
   },
   theme: {
     extend: {
       spacing: {
-        navbar: "var(--navbar-h)",
+        navbar: 'var(--navbar-h)',
       },
     },
   },
   daisyui: {
-    themes: ["winter", "night"],
+    themes: ['winter', 'night'],
   },
-  plugins: [require("daisyui")],
-};
+  plugins: [require('daisyui')],
+}
