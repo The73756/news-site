@@ -1,5 +1,5 @@
 import "./styles/main.css";
-import React from "react";
+import { Suspense } from "react";
 import { useTheme } from "@/app/providers/theme-provider";
 import { AppRouter } from "@/app/providers/router";
 import { Navbar } from "@/widgets/navbar";
@@ -10,13 +10,15 @@ export const App = () => {
 
   return (
     <div data-theme={theme} className="app">
-      <Navbar />
-      <div className="flex">
-        <Sidebar />
-        <main className="flex-1 p-5">
-          <AppRouter />
-        </main>
-      </div>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="flex">
+          <Sidebar />
+          <main className="flex-1 p-5">
+            <AppRouter />
+          </main>
+        </div>
+      </Suspense>
     </div>
   );
 };

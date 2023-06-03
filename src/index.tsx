@@ -1,6 +1,7 @@
 import { render } from "react-dom";
-import { App } from "./app/app";
 import { BrowserRouter } from "react-router-dom";
+import { App } from "./app/app";
+import "@/shared/config/i18n";
 import { ThemeProvider } from "@/app/providers/theme-provider";
 
 render(
@@ -9,5 +10,6 @@ render(
       <App />
     </ThemeProvider>
   </BrowserRouter>,
+
   document.getElementById("root"),
 );
