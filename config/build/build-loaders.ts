@@ -5,6 +5,26 @@ import { BuildOptions } from "./types/config";
 export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
   const { isDev } = options;
 
+  const babelLoader = {
+    test: /\.ts?x$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+        plugins: [
+          [
+            "i18next-extract",
+            {
+              locales: ["en", "ru"],
+              keyAsDefaultValue: true,
+            },
+          ],
+        ],
+      },
+    },
+  };
+
   const cssLoader = {
     test: /\.(scss|css)$/i,
     use: [
@@ -29,5 +49,5 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
     exclude: /node_modules/,
   };
 
-  return [typescriptLoader, cssLoader];
+  return [babelLoader, typescriptLoader, cssLoader];
 };
