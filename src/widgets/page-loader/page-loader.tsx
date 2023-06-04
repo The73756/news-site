@@ -3,7 +3,7 @@ import { Loader } from '@/shared/ui/loader'
 
 export const PageLoader = () => {
   return (
-    <div className={tw.w_full.flex.justify_center.items_center.flex_1 + ' body-height'}>
+    <div className={tw.w_full.flex.justify_center.items_center.flex_1.h_full}>
       <Loader />
     </div>
   )
