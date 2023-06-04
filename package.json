@@ -6,7 +6,8 @@
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
-    "lint:fix": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --fix"
+    "lint:fix": "eslint \"src/**/*.{js,ts,jsx,tsx}\" --fix",
+    "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.6.0",
@@ -21,8 +22,10 @@
   "devDependencies": {
     "@babel/core": "^7.22.1",
     "@babel/preset-env": "^7.22.4",
+    "@babel/preset-typescript": "^7.16.7",
     "@neodx/svg": "^0.2.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+    "@types/jest": "^27.4.1",
     "@types/node": "^20.2.1",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
@@ -35,6 +38,7 @@
     "clear-module": "^4.1.2",
     "css-loader": "^6.7.4",
     "daisyui": "^2.51.6",
+    "jest": "^27.5.1",
     "eslint": "^8.42.0",
     "eslint-kit": "^9.1.0",
     "html-webpack-plugin": "^5.5.0",
