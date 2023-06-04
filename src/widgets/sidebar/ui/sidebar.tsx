@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { tw } from 'typewind'
 import { cls } from '@/shared/lib'
 import { Button, ThemeSwitcher } from '@/shared/ui'
 import { LangSwitcher } from '@/shared/ui/lang-switcher/lang-switcher'
@@ -17,17 +18,17 @@ export const Sidebar = ({ className }: SidebarProps) => {
   return (
     <aside
       className={cls(
-        'body-height flex w-[var(--sidebar-w)] flex-col bg-base-300 p-2 transition-[width]',
+        tw.bg_base_300.flex.flex_col.p_2.transition_.width.w_['var(--sidebar-w)'] + ' body-height',
         { 'w-[var(--sidebar-w-collapsed)]': collapsed },
         [className]
       )}
     >
-      <div className="flex-1">
-        <Button size="large" onClick={toggleCollapsed} className="btn-sm btn">
+      <div className={tw.flex_1}>
+        <Button size="large" onClick={toggleCollapsed} className={tw.btn.btn_sm}>
           T
         </Button>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className={tw.flex.flex_wrap.gap_2}>
         <ThemeSwitcher />
         <LangSwitcher />
       </div>

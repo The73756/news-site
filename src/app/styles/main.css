@@ -11,12 +11,6 @@
 }
 
 @layer components {
-  .app {
-    min-height: 100vh;
-    min-width: 320px;
-    width: 100%;
-  }
-
   .body-height {
     min-height: calc(100vh - var(--navbar-h));
   }
