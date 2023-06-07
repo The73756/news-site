@@ -11,7 +11,7 @@ export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation()
 
   return (
-    <nav className={cls(tw.bg_base_300.h_navbar.navbar.px_8, {}, [className])}>
+    <nav className={cls(tw.bg_base_300.h_navbar.navbar.px_8, {}, [className])} data-testid="navbar">
       <ul className={tw.w_full}>
         <li className={tw.flex_1}>
           <AppLink to="/" className={tw.btn.btn_ghost.normal_case.text_xl}>

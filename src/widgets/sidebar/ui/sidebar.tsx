@@ -17,6 +17,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
 
   return (
     <aside
+      data-testid="sidebar"
       className={cls(
         tw.bg_base_300.flex.flex_col.p_2.transition_.width.w_['var(--sidebar-w)'] + ' body-height',
         { 'w-[var(--sidebar-w-collapsed)]': collapsed },
@@ -24,7 +25,12 @@ export const Sidebar = ({ className }: SidebarProps) => {
       )}
     >
       <div className={tw.flex_1}>
-        <Button size="large" onClick={toggleCollapsed} className={tw.btn.btn_sm}>
+        <Button
+          size="large"
+          onClick={toggleCollapsed}
+          className={tw.btn.btn_sm}
+          data-testid="sidebar-toggle"
+        >
           T
         </Button>
       </div>
