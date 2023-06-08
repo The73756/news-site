@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { tw } from 'typewind'
-import { cls } from '@/shared/lib'
-import { Button, ThemeSwitcher } from '@/shared/ui'
-import { LangSwitcher } from '@/shared/ui/lang-switcher/lang-switcher'
+import { cls } from '@/shared/lib/class-names'
+import { Button, LangSwitcher, ThemeSwitcher } from '@/shared/ui'
 
 interface SidebarProps {
   className?: string

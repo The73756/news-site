@@ -1,4 +1,6 @@
 export { AppLink } from './app-link'
 export { Button } from './button'
 export { Icon } from './icon'
+export { LangSwitcher } from './lang-switcher'
+export { Loader } from './loader'
 export { ThemeSwitcher } from './theme-switcher'

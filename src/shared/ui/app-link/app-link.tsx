@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
 import { tw } from 'typewind'
-import { cls } from '@/shared/lib'
+import { cls } from '@/shared/lib/class-names'
 
 interface AppLinkProps extends LinkProps {
   className?: string

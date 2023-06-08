@@ -1,5 +1,5 @@
 import { tw } from 'typewind'
-import { Loader } from '@/shared/ui/loader'
+import { Loader } from '@/shared/ui'
 
 export const PageLoader = () => {
   return (

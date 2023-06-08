@@ -1,6 +1,6 @@
 import { SVGProps } from 'react'
 import { tw } from 'typewind'
-import { cls } from '@/shared/lib'
+import { cls } from '@/shared/lib/class-names'
 import { SpritesMap } from './sprite-definitions'
 
 export type SpriteKey = {

@@ -1,6 +1,6 @@
 import { useTheme } from '@/app/providers/theme-provider'
 import { Theme } from '@/app/providers/theme-provider/lib'
-import { cls } from '@/shared/lib'
+import { cls } from '@/shared/lib/class-names'
 import { Button } from '@/shared/ui'
 import { Icon } from '@/shared/ui/icon/icon'
 

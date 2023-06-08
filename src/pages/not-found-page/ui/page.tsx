@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { tw } from 'typewind'
-import { cls } from '@/shared/lib'
+import { cls } from '@/shared/lib/class-names'
 
 interface NotFoundPageProps {
   className?: string

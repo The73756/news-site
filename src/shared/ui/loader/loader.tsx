@@ -1,5 +1,5 @@
 import './loader.css'
-import { cls } from '@/shared/lib'
+import { cls } from '@/shared/lib/class-names'
 
 interface LoaderProps {
   className?: string
