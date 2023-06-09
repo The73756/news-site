@@ -1,53 +1,13 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
+import { buildBabelLoader, buildCssLoader, buildTsLoader } from './loaders'
 import { BuildOptions } from './types/config'
 
 export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
   const { isDev } = options
 
-  const babelLoader = {
-    test: /\.ts?x$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-        plugins: [
-          [
-            'i18next-extract',
-            {
-              locales: ['en', 'ru'],
-              keyAsDefaultValue: true,
-            },
-          ],
-        ],
-      },
-    },
-  }
-
-  const cssLoader = {
-    test: /\.(scss|css)$/i,
-    use: [
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          import: true,
-          modules: {
-            auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-            localIdentName: isDev ? '[name]__[local]-[hash:8]' : '[hash:8]',
-          },
-        },
-      },
-      'postcss-loader',
-    ],
-  }
-
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  }
+  const cssLoader = buildCssLoader(isDev)
+  const babelLoader = buildBabelLoader()
+  const typescriptLoader = buildTsLoader()
 
   return [babelLoader, typescriptLoader, cssLoader]
 }
