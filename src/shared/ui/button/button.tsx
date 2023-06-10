@@ -29,6 +29,7 @@ export const Button: FC<ButtonProps> = ({ className, children, shape, size, ...p
   return (
     <button className={button({ shape, size, className })} {...props}>
       {children}
+      <div className="w-0.5" />
     </button>
   )
 }

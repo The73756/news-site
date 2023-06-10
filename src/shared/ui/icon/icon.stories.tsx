@@ -3,6 +3,7 @@ import { Icon } from './icon'
 
 const meta: Meta<typeof Icon> = {
   component: Icon,
+  title: 'shared/icon',
 }
 
 export default meta
@@ -14,7 +15,7 @@ export const Basic: Story = {
   },
   decorators: [
     (Story) => (
-      <div className="text-base-100" style={{ fontSize: '60px' }}>
+      <div style={{ fontSize: '60px', color: 'hsl(var(--b3)/)' }}>
         <Story />
       </div>
     ),
