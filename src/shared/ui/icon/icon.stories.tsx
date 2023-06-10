@@ -15,7 +15,7 @@ export const Basic: Story = {
   },
   decorators: [
     (Story) => (
-      <div style={{ fontSize: '60px', color: 'hsl(var(--b3)/)' }}>
+      <div style={{ fontSize: '60px', color: 'hsl(var(--b3)/)', lineHeight: 1 }}>
         <Story />
       </div>
     ),

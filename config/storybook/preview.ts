@@ -2,6 +2,7 @@ import '../../src/app/styles/main.css'
 import { withThemeByDataAttribute } from '@storybook/addon-styling'
 import type { Preview } from '@storybook/react'
 import { withRouter } from 'storybook-addon-react-router-v6'
+// noinspection ES6PreferShortImport
 import { Theme } from '../../src/app/providers/theme-provider'
 
 const preview: Preview = {
@@ -22,7 +23,7 @@ export const decorators = [
       light: Theme.LIGHT,
       dark: Theme.DARK,
     },
-    defaultTheme: Theme.DARK,
+    defaultTheme: 'dark',
     attributeName: 'data-theme',
   }),
   withRouter,

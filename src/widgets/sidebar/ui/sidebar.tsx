@@ -24,12 +24,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
       )}
     >
       <div className={tw.flex_1}>
-        <Button
-          size="large"
-          onClick={toggleCollapsed}
-          className={tw.btn.btn_sm}
-          data-testid="sidebar-toggle"
-        >
+        <Button size="large" shape="rounded" onClick={toggleCollapsed} data-testid="sidebar-toggle">
           T
         </Button>
       </div>

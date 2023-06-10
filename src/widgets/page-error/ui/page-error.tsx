@@ -11,10 +11,10 @@ export const PageError = () => {
 
   return (
     <div className={tw.w_full.h_['100vh'].flex.flex_col.items_center.justify_center.gap_6}>
-      <h1 className={tw.text_5xl.text_error_content.font_medium}>
+      <h1 className={tw.text_5xl.text_primary.font_medium}>
         {t('Произошла непредвиденная ошибка')}
       </h1>
-      <Button onClick={reloadPage} className={tw.btn_error.btn_lg}>
+      <Button onClick={reloadPage} className={tw.btn_primary.btn_lg}>
         {t('Обновить страницу')}
       </Button>
     </div>
