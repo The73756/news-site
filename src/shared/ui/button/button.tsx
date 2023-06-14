@@ -5,19 +5,19 @@ import { tw } from 'typewind'
 const button = cva(tw.btn, {
   variants: {
     shape: {
-      rounded: ['btn-circle'],
       default: [],
+      rounded: ['btn-circle'],
     },
     size: {
-      normal: [],
+      default: [],
       large: [tw.btn_xl.text_xl],
       small: [tw.btn_sm.text_sm],
     },
   },
-  compoundVariants: [{ shape: 'default', size: 'normal' }],
+  compoundVariants: [{ shape: 'default', size: 'default' }],
   defaultVariants: {
     shape: 'default',
-    size: 'normal',
+    size: 'default',
   },
 })
 
@@ -29,7 +29,6 @@ export const Button: FC<ButtonProps> = ({ className, children, shape, size, ...p
   return (
     <button className={button({ shape, size, className })} {...props}>
       {children}
-      <div className="w-0.5" />
     </button>
   )
 }

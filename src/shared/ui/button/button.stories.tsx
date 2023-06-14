@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Button>
 export const Basic: Story = {
   args: {
     shape: 'default',
-    size: 'normal',
+    size: 'default',
     children: 'hello',
   },
 }
