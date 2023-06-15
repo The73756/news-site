@@ -11,6 +11,9 @@
     "test:ui": "loki test",
     "test:ui:ok": "loki approve",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook"
   },
@@ -69,6 +72,7 @@
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
     "react-refresh": "^0.14.0",
+    "reg-cli": "^0.17.7",
     "storybook": "^7.0.20",
     "storybook-addon-react-router-v6": "^1.0.2",
     "style-loader": "^3.3.3",
