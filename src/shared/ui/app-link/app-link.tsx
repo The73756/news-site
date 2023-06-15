@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import { Link, LinkProps } from 'react-router-dom'
-import { tw } from 'typewind'
 import { cls } from '@/shared/lib/class-names'
 
 interface AppLinkProps extends LinkProps {
@@ -9,7 +8,7 @@ interface AppLinkProps extends LinkProps {
 
 export const AppLink: FC<AppLinkProps> = ({ className, children, ...props }) => {
   return (
-    <Link {...props} className={cls(tw.link, {}, [className])}>
+    <Link {...props} className={cls('link', {}, [className])}>
       {children}
     </Link>
   )

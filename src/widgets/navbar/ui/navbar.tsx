@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import { tw } from 'typewind'
 import { cls } from '@/shared/lib/class-names'
 import { AppLink } from '@/shared/ui'
 
@@ -11,18 +10,12 @@ export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation()
 
   return (
-    <nav className={cls(tw.bg_base_300.h_navbar.navbar.px_8, {}, [className])} data-testid="navbar">
-      <ul className={tw.w_full}>
-        <li className={tw.flex_1}>
-          <AppLink to="/" className={tw.btn.btn_ghost.normal_case.text_xl}>
+    <nav className={cls('navbar h-navbar bg-base-300 px-8', {}, [className])} data-testid="navbar">
+      <ul className="w-full">
+        <li className="flex-1">
+          <AppLink to="/" className="btn-ghost btn text-xl normal-case">
             {t('Новостной сайт')}
           </AppLink>
-        </li>
-        <li>
-          <AppLink to="/" className={tw.mr_2}>
-            {t('Главная')}
-          </AppLink>
-          <AppLink to="/about">{t('О сайте')}</AppLink>
         </li>
       </ul>
     </nav>

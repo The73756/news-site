@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { tw } from 'typewind'
+import { useTranslation } from 'react-i18next'
+import { RoutePath } from '@/app/providers/router/config/route-config'
 import { cls } from '@/shared/lib/class-names'
-import { Button, Icon, LangSwitcher, ThemeSwitcher } from '@/shared/ui'
+import { AppLink, Button, Icon, LangSwitcher, ThemeSwitcher } from '@/shared/ui'
 
 interface SidebarProps {
   className?: string
@@ -9,6 +10,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const { t } = useTranslation()
 
   const toggleCollapsed = () => {
     setIsCollapsed((prev) => !prev)
@@ -18,28 +20,38 @@ export const Sidebar = ({ className }: SidebarProps) => {
     <aside
       data-testid="sidebar"
       className={cls(
-        tw.bg_base_300.relative.flex.flex_col.p_2.transition_.width.w_['var(--sidebar-w)'] +
-          ' body-height',
+        'body-height relative flex w-[var(--sidebar-w)] flex-col bg-base-300 p-2 transition-[width]',
         { 'w-[var(--sidebar-w-collapsed)]': isCollapsed },
         [className]
       )}
     >
-      <div className={tw.flex_1} />
-      <div className={tw.flex.flex_wrap.gap_2}>
+      <div className="flex-1">
+        <nav aria-label="Основная навигация">
+          <ul className="flex flex-col gap-2">
+            <li>
+              <AppLink to={RoutePath.main}>{t('Главная')}</AppLink>
+            </li>
+            <li>
+              <AppLink to={RoutePath.about}>{t('О сайте')}</AppLink>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div className="flex flex-wrap gap-2">
         <ThemeSwitcher />
         <LangSwitcher />
       </div>
       <Button
         size="large"
         shape="rounded"
-        className={cls(tw.transition_transform.btn_ghost.no_animation.absolute.top_['1/2'].right_1)}
+        className="btn-ghost no-animation absolute right-1 top-1/2 transition-transform"
         style={{
           transform: `translateY(-50%) rotate(${isCollapsed ? '0deg' : '180deg'})`,
         }}
         onClick={toggleCollapsed}
         data-testid="sidebar-toggle"
       >
-        <Icon name="shared/arrow" className={cls(tw.ml_1)} />
+        <Icon name="shared/arrow" className="ml-1" />
       </Button>
     </aside>
   )

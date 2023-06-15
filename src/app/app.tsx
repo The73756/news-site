@@ -1,6 +1,5 @@
 import './styles/main.css'
 import { Suspense } from 'react'
-import { tw } from 'typewind'
 import { AppRouter } from '@/app/providers/router'
 import { useTheme } from '@/app/providers/theme-provider'
 import { Navbar } from '@/widgets/navbar'
@@ -8,14 +7,13 @@ import { Sidebar } from '@/widgets/sidebar'
 
 export const App = () => {
   const { theme } = useTheme()
-
   return (
-    <div data-theme={theme} className={tw.min_h_['100vh'].min_w_['320px'].w_full}>
+    <div data-theme={theme} className="min-h-[100vh] w-full min-w-[320px]">
       <Suspense fallback="">
         <Navbar />
-        <div className={tw.flex}>
+        <div className="flex">
           <Sidebar />
-          <main className={tw.flex_1.p_5}>
+          <main className="flex-1 p-5">
             <AppRouter />
           </main>
         </div>

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { tw } from 'typewind'
 import { NotFoundPage } from './page'
 
 const meta: Meta<typeof NotFoundPage> = {
@@ -13,7 +12,7 @@ type Story = StoryObj<typeof NotFoundPage>
 export const Basic: Story = {
   decorators: [
     (Story) => (
-      <div className={tw.h_['100vh']}>
+      <div className="h-[100vh]">
         <Story />
       </div>
     ),

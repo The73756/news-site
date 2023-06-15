@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next'
-import { tw } from 'typewind'
 import { cls } from '@/shared/lib/class-names'
 
 interface NotFoundPageProps {
@@ -9,8 +8,8 @@ interface NotFoundPageProps {
 export const NotFoundPage = ({ className }: NotFoundPageProps) => {
   const { t } = useTranslation()
   return (
-    <div className={cls(tw.flex.justify_center.items_center.h_full, {}, [className])}>
-      <h2 className={tw.text_2xl}>{t('Страница не найдена')}</h2>
+    <div className={cls('flex h-full items-center justify-center', {}, [className])}>
+      <h2 className="text-2xl">{t('Страница не найдена')}</h2>
     </div>
   )
 }

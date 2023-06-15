@@ -1,13 +1,6 @@
-import { tw } from 'typewind'
-
-type Typewind = typeof tw
 type Mods = Record<string, boolean | string>
 
-export const cls = (
-  cls: string | Typewind,
-  mods: Mods = {},
-  additional?: (string | Typewind | undefined)[]
-): string => {
+export const cls = (cls: string, mods: Mods = {}, additional?: (string | undefined)[]): string => {
   const additionalArray = additional || []
 
   return [

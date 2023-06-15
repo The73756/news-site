@@ -1,5 +1,3 @@
-const { typewindTransforms } = require('typewind/transform')
-
 /** @type {import("tailwindcss").Config} */
 
 /**
@@ -10,7 +8,6 @@ const { typewindTransforms } = require('typewind/transform')
 module.exports = {
   content: {
     files: ['./src/**/*.tsx'],
-    transform: typewindTransforms,
   },
   theme: {
     extend: {

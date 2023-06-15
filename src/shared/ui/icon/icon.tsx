@@ -1,5 +1,4 @@
 import { SVGProps } from 'react'
-import { tw } from 'typewind'
 import { cls } from '@/shared/lib/class-names'
 import { SpritesMap } from './sprite-definitions'
 
@@ -16,11 +15,9 @@ export const Icon = ({ name, className, viewBox, ...props }: IconProps) => {
 
   return (
     <svg
-      className={cls(
-        tw.fill_current.h_['1em'].inline_block.select_none.text_inherit.w_['1em'],
-        {},
-        [className]
-      )}
+      className={cls('inline-block h-[1em] w-[1em] select-none fill-current text-inherit', {}, [
+        className,
+      ])}
       viewBox={viewBox}
       focusable="false"
       aria-hidden

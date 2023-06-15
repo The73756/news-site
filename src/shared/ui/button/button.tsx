@@ -1,17 +1,16 @@
 import { cva, VariantProps } from 'class-variance-authority'
 import { ButtonHTMLAttributes, FC } from 'react'
-import { tw } from 'typewind'
 
-const button = cva(tw.btn, {
+const button = cva('btn', {
   variants: {
     shape: {
       default: [],
-      rounded: ['btn-circle'],
+      rounded: 'btn-circle',
     },
     size: {
       default: [],
-      large: [tw.btn_xl.text_xl],
-      small: [tw.btn_sm.text_sm],
+      large: 'btn-xl text-xl',
+      small: 'btn-sm text-sx',
     },
   },
   compoundVariants: [{ shape: 'default', size: 'default' }],
