@@ -8,7 +8,7 @@ interface AppLinkProps extends LinkProps {
 
 export const AppLink: FC<AppLinkProps> = ({ className, children, ...props }) => {
   return (
-    <Link {...props} className={cls('link', {}, [className])}>
+    <Link {...props} className={cls('link-hover text-lg', {}, [className])}>
       {children}
     </Link>
   )

@@ -5,8 +5,9 @@
 @layer base {
   :root {
     --navbar-h: 64px;
+    --sidebar-x-padding: 16px;
     --sidebar-w: 300px;
-    --sidebar-w-collapsed: 64px;
+    --sidebar-w-collapsed: calc(64px + var(--sidebar-x-padding));
   }
 }
 

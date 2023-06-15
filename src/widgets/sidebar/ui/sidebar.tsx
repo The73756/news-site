@@ -20,19 +20,52 @@ export const Sidebar = ({ className }: SidebarProps) => {
     <aside
       data-testid="sidebar"
       className={cls(
-        'body-height relative flex w-[var(--sidebar-w)] flex-col bg-base-300 p-2 transition-[width]',
+        'body-height relative flex w-[var(--sidebar-w)] flex-col bg-base-300 px-[var(--sidebar-x-padding)] py-2 transition-[width]',
         { 'w-[var(--sidebar-w-collapsed)]': isCollapsed },
         [className]
       )}
     >
       <div className="flex-1">
         <nav aria-label="Основная навигация">
-          <ul className="flex flex-col gap-2">
-            <li>
-              <AppLink to={RoutePath.main}>{t('Главная')}</AppLink>
+          <ul
+            className={cls('flex flex-col', {
+              'gap-0': isCollapsed,
+              'gap-3': !isCollapsed,
+            })}
+          >
+            <li className="flex items-center gap-1">
+              <AppLink
+                to={RoutePath.about}
+                className={cls('flex items-center gap-2 whitespace-nowrap', {
+                  'btn-ghost btn-circle btn': isCollapsed,
+                })}
+              >
+                <Icon name="nav/home" className={cls('text-2xl')} />
+                <span
+                  className={cls('', {
+                    'sr-only': isCollapsed,
+                  })}
+                >
+                  {t('Главная')}
+                </span>
+              </AppLink>
             </li>
-            <li>
-              <AppLink to={RoutePath.about}>{t('О сайте')}</AppLink>
+            <li className="flex items-center gap-1">
+              <AppLink
+                to={RoutePath.about}
+                className={cls('flex items-center gap-2 whitespace-nowrap', {
+                  'btn-ghost btn-circle btn': isCollapsed,
+                })}
+              >
+                <Icon name="nav/about" className={cls('text-2xl')} />
+                <span
+                  className={cls('', {
+                    'sr-only': isCollapsed,
+                  })}
+                >
+                  {t('О сайте')}
+                </span>
+              </AppLink>
             </li>
           </ul>
         </nav>
