@@ -1,6 +1,7 @@
+import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cls } from '@/shared/lib/class-names'
-import { AppLink } from '@/shared/ui'
+import { AppLink, Button, Modal } from '@/shared/ui'
 
 interface NavbarProps {
   className?: string
@@ -8,6 +9,11 @@ interface NavbarProps {
 
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation()
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false)
+
+  const onToggleAuthModal = useCallback(() => {
+    setIsAuthModalOpen((prevState) => !prevState)
+  }, [])
 
   return (
     <nav className={cls('navbar h-navbar bg-base-300 px-8', {}, [className])} data-testid="navbar">
@@ -17,6 +23,12 @@ export const Navbar = ({ className }: NavbarProps) => {
             {t('Новостной сайт')}
           </AppLink>
         </li>
+
+        <Button onClick={onToggleAuthModal}>{t('Войти')}</Button>
+
+        <Modal onClose={onToggleAuthModal} isOpen={isAuthModalOpen}>
+          Hello!
+        </Modal>
       </ul>
     </nav>
   )

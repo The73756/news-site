@@ -1,11 +1,11 @@
 export interface SpritesMap {
+  nav: 'about' | 'home'
   shared: 'arrow' | 'translate'
   theme: 'moon' | 'sun'
-  nav: 'home' | 'about'
 }
 
 export const SPRITES_META: { [K in keyof SpritesMap]: SpritesMap[K][] } = {
+  nav: ['about', 'home'],
   shared: ['arrow', 'translate'],
   theme: ['moon', 'sun'],
-  nav: ['home', 'about'],
 }
