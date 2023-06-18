@@ -1,7 +1,7 @@
 const { configure, presets } = require('eslint-kit')
 
 module.exports = configure({
-  allowDebug: true,
+  allowDebug: process.env.NODE_ENV !== 'production',
 
   presets: [presets.imports(), presets.node(), presets.typescript(), presets.react()],
 

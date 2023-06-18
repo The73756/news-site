@@ -26,7 +26,8 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): webpack.WebpackPlu
       },
     }),
     new webpack.DefinePlugin({
-      WEBPACK_IS_DEV: isDev,
+      'WEBPACK_IS_DEV': isDev,
+      'process.env.NODE_ENV': JSON.stringify(isDev ? 'development' : 'production'),
     }),
   ]
 

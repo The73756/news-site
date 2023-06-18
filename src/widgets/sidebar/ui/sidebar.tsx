@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { RoutePath } from '@/app/providers/router/config/route-config'
+import { RoutePath } from '@/app/providers/router'
 import { cls } from '@/shared/lib/class-names'
 import { AppLink, Button, Icon, LangSwitcher, ThemeSwitcher } from '@/shared/ui'
 
