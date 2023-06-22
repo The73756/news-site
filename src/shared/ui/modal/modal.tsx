@@ -11,7 +11,7 @@ interface ModalProps {
 export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={onClose}>
+      <Dialog as="div" className=" relative z-10" onClose={onClose}>
         <Transition.Child
           as={Fragment}
           enter=""
@@ -35,7 +35,7 @@ export const Modal = ({ children, isOpen, onClose }: ModalProps) => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-80"
             >
-              <Dialog.Panel className="modal-box w-auto">{children}</Dialog.Panel>
+              <Dialog.Panel className="modal-box ">{children}</Dialog.Panel>
             </Transition.Child>
           </div>
         </div>

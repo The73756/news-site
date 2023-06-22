@@ -4,11 +4,11 @@ import { ButtonHTMLAttributes, FC } from 'react'
 const button = cva('btn', {
   variants: {
     shape: {
-      default: [],
+      default: '',
       rounded: 'btn-circle',
     },
     size: {
-      default: [],
+      default: '',
       large: 'btn-xl text-xl',
       small: 'btn-sm text-sx',
     },

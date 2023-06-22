@@ -1,6 +1,7 @@
 export { AppLink } from './app-link'
 export { Button } from './button'
 export { Icon } from './icon'
+export { Input } from './input'
 export { LangSwitcher } from './lang-switcher'
 export { Loader } from './loader'
 export { Modal } from './modal'

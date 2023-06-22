@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "webpack serve --env port=3000",
     "dev:server": "node ./json-server-config",
+    "dev:all": "concurrently -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"bold.blue,bold.magenta\"  \"npm run dev:server\" \"npm run dev\"",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint": "eslint \"src/**/*.{js,ts,jsx,tsx}\"",
@@ -60,6 +61,7 @@
     "babel-loader": "^9.1.2",
     "babel-plugin-i18next-extract": "^0.8.3",
     "clear-module": "^4.1.2",
+    "concurrently": "^8.2.0",
     "css-loader": "^6.7.4",
     "daisyui": "^2.51.6",
     "eslint": "^8.42.0",

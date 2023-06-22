@@ -1,7 +1,8 @@
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { LoginModal } from '@/features/auth-by-username'
 import { cls } from '@/shared/lib/class-names'
-import { AppLink, Button, Modal } from '@/shared/ui'
+import { AppLink, Button } from '@/shared/ui'
 
 interface NavbarProps {
   className?: string
@@ -26,9 +27,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 
         <Button onClick={onToggleAuthModal}>{t('Войти')}</Button>
 
-        <Modal onClose={onToggleAuthModal} isOpen={isAuthModalOpen}>
-          Hello!
-        </Modal>
+        <LoginModal onClose={onToggleAuthModal} isOpen={isAuthModalOpen} />
       </ul>
     </nav>
   )
