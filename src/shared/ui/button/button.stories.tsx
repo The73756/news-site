@@ -13,6 +13,7 @@ export const Basic: Story = {
   args: {
     shape: 'default',
     size: 'default',
+    disabled: false,
     children: 'hello',
   },
 }
@@ -21,6 +22,7 @@ export const ForIcon: Story = {
   args: {
     shape: 'rounded',
     size: 'large',
+    disabled: false,
     children: 'i',
   },
 }
