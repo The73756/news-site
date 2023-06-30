@@ -1,12 +1,19 @@
 import './styles/main.css'
 import { Suspense, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { AppRouter } from '@/app/providers/router'
 import { useTheme } from '@/app/providers/theme-provider'
+import { userActions } from '@/entities/user'
 import { Navbar } from '@/widgets/navbar'
 import { Sidebar } from '@/widgets/sidebar'
 
 export const App = () => {
   const { theme } = useTheme()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(userActions.initUserData())
+  }, [dispatch])
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme

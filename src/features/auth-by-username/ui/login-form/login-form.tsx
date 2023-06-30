@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { getLoginState, loginActions, loginByUsername } from '@/features/auth-by-username'
 import { cls } from '@/shared/lib/class-names'
-import { Button, Input } from '@/shared/ui'
+import { Button, Input, Text } from '@/shared/ui'
 
 interface LoginFormProps {
   className?: string
@@ -38,7 +38,10 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
   return (
     <div className={cls('', {}, [className])}>
-      {error && <div className="text-error">{error}</div>}
+      <Text title={t('Форма авторизации')} titleSize="xl" className="mb-4" />
+      {error && (
+        <Text theme="error" text={t('Вы ввели неверный логин или пароль')} className="mb-4" />
+      )}
       <form onSubmit={onSubmit} className="flex flex-col gap-4">
         <Input
           placeholder={t('Введите username')}

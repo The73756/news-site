@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { StoreDecorator } from '@/shared/config/storybook'
 import { LoginModal } from './login-modal'
 
 const meta: Meta<typeof LoginModal> = {
@@ -13,4 +14,9 @@ export const Basic: Story = {
   args: {
     isOpen: true,
   },
+  decorators: [
+    StoreDecorator({
+      loginForm: { username: 'admin', password: '123' },
+    }),
+  ],
 }

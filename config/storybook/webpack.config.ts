@@ -12,6 +12,11 @@ export default function storybookConfig({ config }: { config: webpack.Configurat
 
   config.resolve?.modules?.push(paths.src)
   config.resolve?.extensions?.push('.ts', '.tsx')
+  config.plugins?.push(
+    new webpack.DefinePlugin({
+      WEBPACK_IS_DEV: true,
+    })
+  )
 
   if (config.resolve?.alias) {
     config.resolve.alias = {

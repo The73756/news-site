@@ -7,5 +7,8 @@
   "Обновить страницу": "Reload",
   "Войти": "Login",
   "Введите пароль": "Enter password",
-  "Введите username": "Enter username"
+  "Введите username": "Enter username",
+  "Форма авторизации": "Login form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
+  "Выйти": "Logout"
 }

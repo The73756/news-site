@@ -13,7 +13,6 @@ const button = cva('btn', {
       small: 'btn-sm text-sx',
     },
   },
-  compoundVariants: [{ shape: 'default', size: 'default' }],
   defaultVariants: {
     shape: 'default',
     size: 'default',
