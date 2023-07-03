@@ -1,1 +1,1 @@
-export { LoginForm } from './login-form'
+export { LoginFormAsync } from './login-form.async'
