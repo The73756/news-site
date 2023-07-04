@@ -21,6 +21,7 @@ export default {
   globals: {
     WEBPACK_IS_DEV: true,
   },
+  transformIgnorePatterns: ['/node_modules/(?!(axios)/)'],
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,
