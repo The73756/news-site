@@ -3,5 +3,4 @@
 
 npm run lint
 npm run test:unit
-npm run storybook:build
-npm run test:ui:ci
+npm run test:ui
