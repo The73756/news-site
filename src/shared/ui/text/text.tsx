@@ -8,8 +8,8 @@ const textVariants = cva('', {
       error: 'text-error',
     },
     titleSize: {
-      default: 'text-lg',
-      xl: 'text-xl',
+      default: 'text-xl',
+      xl: 'text-2xl',
     },
     textSize: {
       default: 'opacity-80',
