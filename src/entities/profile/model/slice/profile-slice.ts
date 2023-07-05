@@ -11,7 +11,9 @@ const initialState: ProfileSchema = {
 export const ProfileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: {},
+  reducers: {
+    setReadonly: (state, action) => {},
+  },
 })
 
 export const { actions: profileActions, reducer: profileReducer } = ProfileSlice

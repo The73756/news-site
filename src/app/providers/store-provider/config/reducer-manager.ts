@@ -1,20 +1,24 @@
 import { AnyAction, combineReducers, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { ReducerManager, StateSchema, StateSchemaKey } from './state-schema'
 
-export const createReducerManager = (
+export function createReducerManager(
   initialReducers: ReducersMapObject<StateSchema>
-): ReducerManager => {
+): ReducerManager {
   const reducers = { ...initialReducers }
+
   let combinedReducer = combineReducers(reducers)
-  let keysToRemove: StateSchemaKey[] = []
+
+  let keysToRemove: Array<StateSchemaKey> = []
 
   return {
     getReducerMap: () => reducers,
     reduce: (state: StateSchema, action: AnyAction) => {
       if (keysToRemove.length > 0) {
-        for (const key of keysToRemove) {
-          delete { ...state }[key]
-        }
+        // eslint-disable-next-line no-param-reassign
+        state = { ...state }
+        keysToRemove.forEach((key) => {
+          delete state[key]
+        })
         keysToRemove = []
       }
       return combinedReducer(state, action)
@@ -25,6 +29,7 @@ export const createReducerManager = (
         return
       }
       reducers[key] = reducer
+
       combinedReducer = combineReducers(reducers)
     },
     remove: (key: StateSchemaKey) => {

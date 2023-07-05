@@ -7,3 +7,4 @@ declare module '*.css' {
 }
 
 declare const WEBPACK_IS_DEV: boolean
+declare const API_URL: string

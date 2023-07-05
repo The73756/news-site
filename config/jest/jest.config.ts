@@ -20,6 +20,7 @@ export default {
   },
   globals: {
     WEBPACK_IS_DEV: true,
+    API_URL: '',
   },
   transformIgnorePatterns: ['/node_modules/(?!(axios)/)'],
 

@@ -7,15 +7,14 @@ import { ThemeProvider } from '@/app/providers/theme-provider'
 import { App } from './app/app'
 
 render(
-  <StoreProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <StoreProvider>
       <ErrorBoundary>
         <ThemeProvider>
           <App />
         </ThemeProvider>
       </ErrorBoundary>
-    </BrowserRouter>
-  </StoreProvider>,
-
+    </StoreProvider>
+  </BrowserRouter>,
   document.querySelector('#root')
 )
