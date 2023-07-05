@@ -1,3 +1,3 @@
-export * from './selectors'
-export * from './slice'
-export * from './types'
+export { getUserAuthData } from './selectors'
+export { userActions, userReducer } from './slice/user-slice'
+export { User, UserSchema } from './types/user'

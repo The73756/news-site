@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
-import { RoutePath } from '@/app/providers/router'
 import { cls } from '@/shared/lib/class-names'
-import { AppLink, Button, Icon, LangSwitcher, ThemeSwitcher } from '@/shared/ui'
+import { Button, Icon, LangSwitcher, ThemeSwitcher } from '@/shared/ui'
+import { SidebarItem } from '@/widgets/sidebar/ui/sidebar-item'
+import { SidebarItemsList } from '../model'
 
 interface SidebarProps {
   className?: string
@@ -10,7 +10,6 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false)
-  const { t } = useTranslation()
 
   const toggleCollapsed = () => {
     setIsCollapsed((prev) => !prev)
@@ -33,40 +32,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
               'gap-3': !isCollapsed,
             })}
           >
-            <li className="flex items-center gap-1">
-              <AppLink
-                to={RoutePath.about}
-                className={cls('flex items-center gap-2 whitespace-nowrap', {
-                  'btn-ghost btn-circle btn': isCollapsed,
-                })}
-              >
-                <Icon name="nav/home" className={cls('text-2xl')} />
-                <span
-                  className={cls('', {
-                    'sr-only': isCollapsed,
-                  })}
-                >
-                  {t('Главная')}
-                </span>
-              </AppLink>
-            </li>
-            <li className="flex items-center gap-1">
-              <AppLink
-                to={RoutePath.about}
-                className={cls('flex items-center gap-2 whitespace-nowrap', {
-                  'btn-ghost btn-circle btn': isCollapsed,
-                })}
-              >
-                <Icon name="nav/about" className={cls('text-2xl')} />
-                <span
-                  className={cls('', {
-                    'sr-only': isCollapsed,
-                  })}
-                >
-                  {t('О сайте')}
-                </span>
-              </AppLink>
-            </li>
+            {SidebarItemsList.map((item) => (
+              <li key={item.path} className="flex items-center gap-1">
+                <SidebarItem item={item} isCollapsed={isCollapsed} />
+              </li>
+            ))}
           </ul>
         </nav>
       </div>

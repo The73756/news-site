@@ -1,4 +1,5 @@
 import { cva, VariantProps } from 'class-variance-authority'
+import { memo } from 'react'
 
 const textVariants = cva('', {
   variants: {
@@ -27,11 +28,11 @@ interface TextProps extends VariantProps<typeof textVariants> {
   title?: string
 }
 
-export const Text = ({ className, text, title, theme, textSize, titleSize }: TextProps) => {
+export const Text = memo(({ className, text, title, theme, textSize, titleSize }: TextProps) => {
   return (
     <div className={textVariants({ theme, className })}>
       {title && <div className={textVariants({ titleSize })}>{title}</div>}
       {text && <div className={textVariants({ textSize })}>{text}</div>}
     </div>
   )
-}
+})

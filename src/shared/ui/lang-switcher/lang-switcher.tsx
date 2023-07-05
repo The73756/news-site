@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { cls } from '@/shared/lib/class-names'
 import { Button, Icon } from '@/shared/ui'
@@ -6,7 +7,7 @@ interface LangSwitcherProps {
   className?: string
 }
 
-export const LangSwitcher = ({ className }: LangSwitcherProps) => {
+export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
   const { i18n } = useTranslation()
 
   const toggle = () => {
@@ -18,4 +19,4 @@ export const LangSwitcher = ({ className }: LangSwitcherProps) => {
       <Icon name="shared/translate" />
     </Button>
   )
-}
+})
