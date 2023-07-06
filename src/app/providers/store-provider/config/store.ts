@@ -1,4 +1,4 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
+import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { NavigateFunction } from 'react-router/dist/lib/hooks'
 import { userReducer } from '@/entities/user'
 import { $api } from '@/shared/api'
@@ -18,7 +18,7 @@ export const createReduxStore = (
   const reducerManager = createReducerManager(rootReducers)
 
   const store = configureStore({
-    reducer: reducerManager.reduce,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     devTools: WEBPACK_IS_DEV,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>

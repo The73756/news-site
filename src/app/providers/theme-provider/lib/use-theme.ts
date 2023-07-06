@@ -19,5 +19,5 @@ export const useTheme = (): UseThemeResult => {
     localStorage.setItem(LOCAL_STORAGE_KEY, newTheme)
   }
 
-  return { toggleTheme, theme } as UseThemeResult
+  return { toggleTheme, theme: theme || Theme.DARK }
 }

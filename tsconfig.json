@@ -10,15 +10,15 @@
     "moduleResolution": "bundler",
     "strictNullChecks": true,
     "esModuleInterop": true,
+    "strict": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    },
-
+    }
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  },
+  }
 }
