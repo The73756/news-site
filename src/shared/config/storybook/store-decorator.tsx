@@ -1,7 +1,7 @@
 import { StoryFn } from '@storybook/react'
 import { StateSchema, StoreProvider } from '@/app/providers/store-provider'
-import { profileReducer } from '@/entities/profile'
 import { loginReducer } from '@/features/auth-by-username'
+import { profileReducer } from '@/features/editable-profile-card'
 import { ReducersList } from '@/shared/lib/dynamic-module-loader'
 
 const defaultAsyncReducers: ReducersList = {

@@ -4,7 +4,6 @@ import { memo } from 'react'
 const textVariants = cva('', {
   variants: {
     theme: {
-      default: '',
       error: 'text-error',
     },
     titleSize: {
@@ -15,10 +14,11 @@ const textVariants = cva('', {
       default: 'opacity-80',
       xl: 'text-lg opacity-80',
     },
-  },
-
-  defaultVariants: {
-    theme: 'default',
+    align: {
+      center: 'text-center',
+      right: 'text-right',
+      left: 'text-left',
+    },
   },
 })
 
@@ -28,11 +28,13 @@ interface TextProps extends VariantProps<typeof textVariants> {
   title?: string
 }
 
-export const Text = memo(({ className, text, title, theme, textSize, titleSize }: TextProps) => {
-  return (
-    <div className={textVariants({ theme, className })}>
-      {title && <div className={textVariants({ titleSize })}>{title}</div>}
-      {text && <div className={textVariants({ textSize })}>{text}</div>}
-    </div>
-  )
-})
+export const Text = memo(
+  ({ className, text, title, theme, textSize, titleSize, align }: TextProps) => {
+    return (
+      <div className={textVariants({ theme, className, align })}>
+        {title && <div className={textVariants({ titleSize })}>{title}</div>}
+        {text && <div className={textVariants({ textSize })}>{text}</div>}
+      </div>
+    )
+  }
+)

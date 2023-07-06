@@ -19,8 +19,25 @@ export const Basic: Story = {
 export const Error: Story = {
   args: {
     title: 'Hello, i am error!',
-    text: 'Lorem ipsum dolor sit amet. >',
+    text: 'Lorem ipsum dolor sit amet >:',
     theme: 'error',
+  },
+}
+
+export const Centered: Story = {
+  args: {
+    title: 'Hello, I am centered!',
+    text: 'Lorem ipsum dolor sit amet.',
+    align: 'center',
+  },
+}
+
+export const Large: Story = {
+  args: {
+    title: 'Hello, I am a big text!',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, mollitia!',
+    titleSize: 'xl',
+    textSize: 'xl',
   },
 }
 

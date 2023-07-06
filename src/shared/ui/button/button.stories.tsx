@@ -11,10 +11,22 @@ type Story = StoryObj<typeof Button>
 
 export const Basic: Story = {
   args: {
-    shape: 'default',
-    size: 'default',
     disabled: false,
     children: 'hello',
+  },
+}
+
+export const Large: Story = {
+  args: {
+    children: 'hello',
+    size: 'large',
+  },
+}
+
+export const Small: Story = {
+  args: {
+    children: 'hello',
+    size: 'small',
   },
 }
 
