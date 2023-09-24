@@ -10,9 +10,6 @@ index.use(jsonServer.defaults({}))
 index.use(jsonServer.bodyParser)
 
 index.use(async (req, res, next) => {
-  await new Promise((res) => {
-    setTimeout(res, 800)
-  })
   next()
 })
 

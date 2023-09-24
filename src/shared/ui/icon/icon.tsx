@@ -1,17 +1,19 @@
 import { SVGProps } from 'react'
 import { cls } from '@/shared/lib/class-names'
-import { SpritesMap } from './sprite-definitions'
+import { SPRITES_META, type SpritesMap } from '@/shared/ui/icon/sprite.gen'
 
-export type SpriteKey = {
+export type IconName = {
   [Key in keyof SpritesMap]: `${Key}/${SpritesMap[Key]}`
 }[keyof SpritesMap]
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'name' | 'type'> {
-  name: SpriteKey
+  name: IconName
 }
 
-export const Icon = ({ name, className, viewBox, ...props }: IconProps) => {
-  const [spriteName, iconName] = name.split('/')
+export function Icon({ name, className, ...props }: IconProps) {
+  const [spriteName, iconName] = name.split('/') as [keyof SpritesMap, SpritesMap[keyof SpritesMap]]
+  const { filePath, items } = SPRITES_META[spriteName]
+  const { viewBox } = (items as never)[iconName]
 
   return (
     <svg
@@ -23,7 +25,7 @@ export const Icon = ({ name, className, viewBox, ...props }: IconProps) => {
       aria-hidden
       {...props}
     >
-      <use xlinkHref={`./sprite/${spriteName}.svg#${iconName}`} />
+      <use href={`/${filePath}#${iconName}`} />
     </svg>
   )
 }

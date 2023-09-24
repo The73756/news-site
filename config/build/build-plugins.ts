@@ -22,8 +22,14 @@ export const buildPlugins = ({
     }),
     svg({
       root: 'src/shared/assets/icons',
-      output: 'public/sprite',
-      definitions: 'src/shared/ui/icon/sprite-definitions.ts',
+      output: 'public',
+      metadata: {
+        path: 'src/shared/ui/icon/sprite.gen.ts',
+        runtime: {
+          size: true,
+          viewBox: true,
+        },
+      },
       group: true,
       resetColors: {
         replaceUnknown: 'currentColor',
