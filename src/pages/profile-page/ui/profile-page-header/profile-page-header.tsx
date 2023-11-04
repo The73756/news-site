@@ -24,6 +24,10 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     dispatch(profileActions.cancelEdit())
   }, [dispatch])
 
+  const onSave = useCallback(() => {
+    dispatch(profileActions.cancelEdit())
+  }, [dispatch])
+
   return (
     <div className={cls('', {}, [className])}>
       <div className="mb-4 flex justify-between">
@@ -33,9 +37,14 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
             {t('Редактировать')}
           </Button>
         ) : (
-          <Button onClick={onCancelEdit} className="btn-outline text-lg normal-case">
-            {t('Отменить')}
-          </Button>
+          <div className="flex gap-2">
+            <Button onClick={onCancelEdit} className="btn-outline btn-error text-lg normal-case">
+              {t('Отменить')}
+            </Button>
+            <Button onClick={onSave} className="btn-outline text-lg normal-case">
+              {t('Сохранить')}
+            </Button>
+          </div>
         )}
       </div>
     </div>

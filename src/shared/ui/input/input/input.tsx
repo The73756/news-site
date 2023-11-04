@@ -7,7 +7,7 @@ type HTMLInputElementProps = Omit<
   'onChange' | 'value' | 'readOnly'
 >
 
-interface InputProps extends HTMLInputElementProps {
+export interface InputProps extends HTMLInputElementProps {
   className?: string
   onChange?: (value: string) => void
   value?: string
