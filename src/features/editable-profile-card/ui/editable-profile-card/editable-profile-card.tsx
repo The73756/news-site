@@ -42,11 +42,29 @@ export const EditableProfileCard = () => {
     [dispatch]
   )
 
+  const onChangeAge = useCallback(
+    (value?: string) => {
+      if (value && !/\d+$/.test(value)) return
+
+      dispatch(profileActions.updateProfile({ age: Number(value || 0) }))
+    },
+    [dispatch]
+  )
+
+  const onChangeCity = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ city: value || '' }))
+    },
+    [dispatch]
+  )
+
   return (
     <DynamicModuleLoader reducers={reducers}>
       <ProfileCard
         onChangeFirstname={onChangeFirstname}
         onChangeLastname={onChangeLastname}
+        onChangeCity={onChangeCity}
+        onChangeAge={onChangeAge}
         data={formData}
         error={error}
         isLoading={isLoading}

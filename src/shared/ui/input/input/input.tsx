@@ -10,7 +10,7 @@ type HTMLInputElementProps = Omit<
 export interface InputProps extends HTMLInputElementProps {
   className?: string
   onChange?: (value: string) => void
-  value?: string
+  value?: string | number
   readOnly?: boolean
 }
 
@@ -33,7 +33,7 @@ export const Input = memo((props: InputProps) => {
     <input
       {...props}
       className={cls(inputClasses({ readOnly }), {}, [className])}
-      value={value}
+      value={String(value)}
       readOnly={readOnly}
       onChange={onChangeHandler}
     />

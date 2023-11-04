@@ -1,2 +1,8 @@
-export { profileReducer } from './model'
+export {
+  fetchProfileData,
+  getProfileReadonly,
+  profileActions,
+  profileReducer,
+  updateProfileData,
+} from './model'
 export { EditableProfileCard } from './ui'

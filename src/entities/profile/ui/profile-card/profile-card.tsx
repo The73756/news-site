@@ -9,6 +9,8 @@ interface ProfileCardProps extends ProfileSchema {
   className?: string
   onChangeFirstname: (value?: string) => void
   onChangeLastname: (value?: string) => void
+  onChangeCity: (value?: string) => void
+  onChangeAge: (value?: string) => void
 }
 
 const profileClasses = cva('rounded-lg h-1/2 border border-base-content p-4', {
@@ -27,6 +29,8 @@ export const ProfileCard = ({
   error,
   onChangeLastname,
   onChangeFirstname,
+  onChangeAge,
+  onChangeCity,
 }: ProfileCardProps) => {
   const { t } = useTranslation('profile')
 
@@ -69,6 +73,20 @@ export const ProfileCard = ({
           value={data?.lastname}
           readOnly={readonly}
           onChange={onChangeLastname}
+        />
+        <InputWithLabel
+          label={t('Ваш возраст')}
+          placeholder="21"
+          value={data?.age}
+          readOnly={readonly}
+          onChange={onChangeAge}
+        />
+        <InputWithLabel
+          label={t('Город')}
+          placeholder={t('Москва')}
+          value={data?.city}
+          readOnly={readonly}
+          onChange={onChangeCity}
         />
       </div>
     </div>

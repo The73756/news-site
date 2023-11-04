@@ -1,7 +1,11 @@
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { getProfileReadonly, profileActions } from '@/features/editable-profile-card/model'
+import {
+  getProfileReadonly,
+  profileActions,
+  updateProfileData,
+} from '@/features/editable-profile-card'
 import { cls } from '@/shared/lib/class-names'
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { Button, Text } from '@/shared/ui'
@@ -25,7 +29,8 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch])
 
   const onSave = useCallback(() => {
-    dispatch(profileActions.cancelEdit())
+    dispatch(updateProfileData())
+    dispatch(profileActions.setReadonly(true))
   }, [dispatch])
 
   return (
