@@ -1,11 +1,13 @@
 import { cva } from 'class-variance-authority'
 import { useTranslation } from 'react-i18next'
 import { cls } from '@/shared/lib/class-names'
-import { Button, Input, Loader, Text } from '@/shared/ui'
+import { Input, Loader, Text } from '@/shared/ui'
 import { ProfileSchema } from '../../model'
 
 interface ProfileCardProps extends ProfileSchema {
   className?: string
+  onChangeFirstname: (value?: string) => void
+  onChangeLastname: (value?: string) => void
 }
 
 const profileClasses = cva('rounded-lg h-1/2 border border-base-content p-4', {
@@ -16,7 +18,15 @@ const profileClasses = cva('rounded-lg h-1/2 border border-base-content p-4', {
   },
 })
 
-export const ProfileCard = ({ className, data, isLoading, error }: ProfileCardProps) => {
+export const ProfileCard = ({
+  className,
+  data,
+  isLoading,
+  readonly,
+  error,
+  onChangeLastname,
+  onChangeFirstname,
+}: ProfileCardProps) => {
   const { t } = useTranslation('profile')
 
   if (isLoading) {
@@ -44,13 +54,25 @@ export const ProfileCard = ({ className, data, isLoading, error }: ProfileCardPr
 
   return (
     <div className={cls(profileClasses(), {}, [className])}>
-      <div className="mb-4 flex justify-between">
-        <Text titleSize="xl" title={t('Профиль')} />
-        <Button className="btn-outline text-lg normal-case">{t('Редактировать')}</Button>
-      </div>
-      <div className="flex max-w-xl flex-col gap-2">
-        <Input value={data?.first} placeholder={t('Ваше имя')} />
-        <Input value={data?.lastname} placeholder={t('Ваша фамилия')} />
+      <div className="flex max-w-xl flex-col gap-4">
+        <label>
+          <span className="label-text mb-1 block">{t('Ваше имя')}</span>
+          <Input
+            value={data?.first}
+            placeholder={t('Иван')}
+            readOnly={readonly}
+            onChange={onChangeFirstname}
+          />
+        </label>
+        <label>
+          <span className="label-text mb-1 block">{t('Ваша фамилия')}</span>
+          <Input
+            value={data?.lastname}
+            placeholder={t('Иванов')}
+            readOnly={readonly}
+            onChange={onChangeLastname}
+          />
+        </label>
       </div>
     </div>
   )

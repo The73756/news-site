@@ -1,16 +1,29 @@
+import { cva } from 'class-variance-authority'
 import { ChangeEvent, InputHTMLAttributes, memo } from 'react'
 import { cls } from '@/shared/lib/class-names'
 
-type HTMLInputElementProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value'>
+type HTMLInputElementProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'onChange' | 'value' | 'readOnly'
+>
 
 interface InputProps extends HTMLInputElementProps {
   className?: string
   onChange?: (value: string) => void
   value?: string
+  readOnly?: boolean
 }
 
+const inputClasses = cva('input-bordered input', {
+  variants: {
+    readOnly: {
+      true: 'opacity-80 focus:outline-none',
+    },
+  },
+})
+
 export const Input = memo((props: InputProps) => {
-  const { className, onChange, value } = props
+  const { className, onChange, value, readOnly } = props
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value)
@@ -19,8 +32,9 @@ export const Input = memo((props: InputProps) => {
   return (
     <input
       {...props}
-      className={cls('input-bordered input', {}, [className])}
+      className={cls(inputClasses({ readOnly }), {}, [className])}
       value={value}
+      readOnly={readOnly}
       onChange={onChangeHandler}
     />
   )

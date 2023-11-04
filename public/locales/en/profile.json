@@ -4,5 +4,8 @@
   "Ваше имя": "Your name",
   "Ваша фамилия": "Your last name",
   "Произошла ошибка при загрузке профиля": "An error occurred while loading the profile",
-  "Попробуйте обновить страницу": "Try to refresh the page"
+  "Попробуйте обновить страницу": "Try to refresh the page",
+  "Отменить": "Cancel",
+  "Иван": "John",
+  "Иванов": "Adamson"
 }
