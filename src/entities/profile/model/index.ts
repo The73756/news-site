@@ -1,1 +1,1 @@
-export { Profile, ProfileSchema } from './types/profile'
+export { Profile, ProfileSchema, ValidateProfileError } from './types/profile'

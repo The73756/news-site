@@ -14,5 +14,10 @@
   "Москва": "Washington",
   "Ваш аватар": "Your avatar",
   "Ваше имя пользователя": "Your username",
-  "Изображение профиля для": "Profile picture for"
+  "Изображение профиля для": "Profile picture for",
+  "Произошла ошибка сервера": "Server error occurred. Please try again later",
+  "Пожалуйста, выберите корректную страну": "Please select a correct country",
+  "Пожалуйста, укажите корректное имя и фамилию": "Please enter a correct first and last name",
+  "Пожалуйста, введите корректный возраст": "Please enter a correct age",
+  "Пожалуйста, заполните все поля": "Please fill in all fields"
 }

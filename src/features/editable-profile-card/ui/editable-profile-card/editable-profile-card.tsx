@@ -1,16 +1,19 @@
 import { useCallback, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Country } from '@/entities/country'
 import { Currency } from '@/entities/currency'
-import { ProfileCard } from '@/entities/profile'
+import { ProfileCard, ValidateProfileError } from '@/entities/profile'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/dynamic-module-loader'
 import { useAppDispatch } from '@/shared/lib/hooks'
+import { Text } from '@/shared/ui'
 import {
   fetchProfileData,
   getProfileError,
   getProfileForm,
   getProfileIsLoading,
   getProfileReadonly,
+  getProfileValidateErrors,
   profileActions,
   profileReducer,
 } from '../../model'
@@ -20,11 +23,21 @@ const reducers: ReducersList = {
 }
 
 export const EditableProfileCard = () => {
+  const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
   const formData = useSelector(getProfileForm)
   const error = useSelector(getProfileError)
   const isLoading = useSelector(getProfileIsLoading)
   const readonly = useSelector(getProfileReadonly)
+  const validateErrors = useSelector(getProfileValidateErrors)
+
+  const validateErrorTranslates = {
+    [ValidateProfileError.SERVER_ERROR]: t('Произошла ошибка сервера'),
+    [ValidateProfileError.INCORRECT_COUNTRY]: t('Пожалуйста, выберите корректную страну'),
+    [ValidateProfileError.INCORRECT_USER_DATA]: t('Пожалуйста, укажите корректное имя и фамилию'),
+    [ValidateProfileError.INCORRECT_AGE]: t('Пожалуйста, введите корректный возраст'),
+    [ValidateProfileError.NO_DATA]: t('Пожалуйста, заполните все поля'),
+  }
 
   useEffect(() => {
     dispatch(fetchProfileData())
@@ -90,6 +103,10 @@ export const EditableProfileCard = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
+      {validateErrors?.length &&
+        validateErrors.map((err) => (
+          <Text key={err} text={validateErrorTranslates[err]} theme="error" />
+        ))}
       <ProfileCard
         onChangeFirstname={onChangeFirstname}
         onChangeLastname={onChangeLastname}
