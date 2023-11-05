@@ -58,6 +58,20 @@ export const EditableProfileCard = () => {
     [dispatch]
   )
 
+  const onChangeAvatar = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ avatar: value || '' }))
+    },
+    [dispatch]
+  )
+
+  const onChangeUsername = useCallback(
+    (value?: string) => {
+      dispatch(profileActions.updateProfile({ username: value || '' }))
+    },
+    [dispatch]
+  )
+
   return (
     <DynamicModuleLoader reducers={reducers}>
       <ProfileCard
@@ -65,6 +79,8 @@ export const EditableProfileCard = () => {
         onChangeLastname={onChangeLastname}
         onChangeCity={onChangeCity}
         onChangeAge={onChangeAge}
+        onChangeAvatar={onChangeAvatar}
+        onChangeUsername={onChangeUsername}
         data={formData}
         error={error}
         isLoading={isLoading}
