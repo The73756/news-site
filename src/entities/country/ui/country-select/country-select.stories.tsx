@@ -1,16 +1,16 @@
 import { useArgs } from '@storybook/preview-api'
 import type { Meta, StoryObj } from '@storybook/react'
-import { Currency } from '../../model'
-import { CurrencySelect } from './currency-select'
+import { Country } from '../../model'
+import { CountrySelect } from './country-select'
 
-const meta: Meta<typeof CurrencySelect> = {
-  component: CurrencySelect,
-  title: 'entities/currency-select',
+const meta: Meta<typeof CountrySelect> = {
+  component: CountrySelect,
+  title: 'entities/country-select',
   decorators: [
     function Component(Story, ctx) {
       const [, setArgs] = useArgs<typeof ctx.args>()
 
-      const onChange = (value: Currency) => {
+      const onChange = (value: Country) => {
         ctx.args.onChange?.(value)
 
         setArgs({ value })
@@ -22,10 +22,10 @@ const meta: Meta<typeof CurrencySelect> = {
 }
 
 export default meta
-type Story = StoryObj<typeof CurrencySelect>
+type Story = StoryObj<typeof CountrySelect>
 
 export const Basic: Story = {
   args: {
-    value: Currency.EUR,
+    value: Country.RUSSIA,
   },
 }

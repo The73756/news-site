@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { Country } from '@/entities/country'
 import { Currency } from '@/entities/currency/model'
 import { StoreDecorator } from '@/shared/config/storybook'
-import { Country } from '@/shared/constants/common'
 import ProfilePage from './profile-page'
 
 const meta: Meta<typeof ProfilePage> = {
@@ -21,7 +21,7 @@ export const Basic: Story = {
           lastname: '73756',
           age: 10,
           currency: Currency.RUB,
-          country: Country.Russia,
+          country: Country.RUSSIA,
           city: 'Moscow',
           username: 'admin',
           avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',

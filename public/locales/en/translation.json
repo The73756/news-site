@@ -12,5 +12,10 @@
   "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
   "Выйти": "Logout",
   "Профиль": "Profile",
-  "Укажите валюту": "Set currency"
+  "Укажите валюту": "Set currency",
+  "Укажите страну": "Set country",
+  "Россия": "Russia",
+  "Беларусь": "Belarus",
+  "Казахстан": "Kazakhstan",
+  "Армения": "Armenia"
 }

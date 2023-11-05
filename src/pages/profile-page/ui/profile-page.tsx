@@ -3,7 +3,7 @@ import { ProfilePageHeader } from '@/pages/profile-page/ui/profile-page-header/p
 
 const ProfilePage = () => {
   return (
-    <div>
+    <div className="">
       <ProfilePageHeader />
       <EditableProfileCard />
     </div>

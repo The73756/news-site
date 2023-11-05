@@ -11,20 +11,18 @@ export interface InputProps extends HTMLInputElementProps {
   className?: string
   onChange?: (value: string) => void
   value?: string | number
-  readOnly?: boolean
+  readonly?: boolean
 }
 
 const inputVariants = cva('input-bordered input', {
   variants: {
-    readOnly: {
+    readonly: {
       true: 'opacity-80 focus:outline-none',
     },
   },
 })
 
-export const Input = memo((props: InputProps) => {
-  const { className, onChange, value, readOnly } = props
-
+export const Input = memo(({ className, onChange, value, readonly, ...props }: InputProps) => {
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value)
   }
@@ -32,9 +30,9 @@ export const Input = memo((props: InputProps) => {
   return (
     <input
       {...props}
-      className={cls(inputVariants({ readOnly }), {}, [className])}
+      className={cls(inputVariants({ readonly }), {}, [className])}
       value={String(value)}
-      readOnly={readOnly}
+      readOnly={readonly}
       onChange={onChangeHandler}
     />
   )

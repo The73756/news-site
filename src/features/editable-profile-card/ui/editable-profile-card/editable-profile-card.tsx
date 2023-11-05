@@ -1,5 +1,7 @@
 import { useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import { Country } from '@/entities/country'
+import { Currency } from '@/entities/currency'
 import { ProfileCard } from '@/entities/profile'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/dynamic-module-loader'
 import { useAppDispatch } from '@/shared/lib/hooks'
@@ -72,6 +74,20 @@ export const EditableProfileCard = () => {
     [dispatch]
   )
 
+  const onChangeCurrency = useCallback(
+    (value: Currency) => {
+      dispatch(profileActions.updateProfile({ currency: value }))
+    },
+    [dispatch]
+  )
+
+  const onChangeCountry = useCallback(
+    (value: Country) => {
+      dispatch(profileActions.updateProfile({ country: value }))
+    },
+    [dispatch]
+  )
+
   return (
     <DynamicModuleLoader reducers={reducers}>
       <ProfileCard
@@ -81,6 +97,8 @@ export const EditableProfileCard = () => {
         onChangeAge={onChangeAge}
         onChangeAvatar={onChangeAvatar}
         onChangeUsername={onChangeUsername}
+        onChangeCurrency={onChangeCurrency}
+        onChangeCountry={onChangeCountry}
         data={formData}
         error={error}
         isLoading={isLoading}
