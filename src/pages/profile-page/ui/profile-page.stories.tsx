@@ -32,3 +32,67 @@ export const Basic: Story = {
     }),
   ],
 }
+
+export const Editing: Story = {
+  decorators: [
+    StoreDecorator({
+      profile: {
+        data: {
+          first: 'The',
+          lastname: '73756',
+          age: 10,
+          currency: Currency.RUB,
+          country: Country.RUSSIA,
+          city: 'Moscow',
+          username: 'admin',
+          avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+        },
+        isLoading: false,
+        readonly: false,
+      },
+    }),
+  ],
+}
+
+export const Loading: Story = {
+  decorators: [
+    StoreDecorator({
+      profile: {
+        data: {
+          first: 'The',
+          lastname: '73756',
+          age: 10,
+          currency: Currency.RUB,
+          country: Country.RUSSIA,
+          city: 'Moscow',
+          username: 'admin',
+          avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+        },
+        isLoading: true,
+        readonly: true,
+      },
+    }),
+  ],
+}
+
+export const WithError: Story = {
+  decorators: [
+    StoreDecorator({
+      profile: {
+        data: {
+          first: 'The',
+          lastname: '73756',
+          age: 10,
+          currency: Currency.RUB,
+          country: Country.RUSSIA,
+          city: 'Moscow',
+          username: 'admin',
+          avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+        },
+        isLoading: false,
+        readonly: false,
+        error: 'Error!',
+      },
+    }),
+  ],
+}

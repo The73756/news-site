@@ -16,6 +16,7 @@ export default function storybookConfig({ config }: { config: webpack.Configurat
     new webpack.DefinePlugin({
       WEBPACK_IS_DEV: true,
       API_URL: JSON.stringify(''),
+      PROJECT: JSON.stringify('storybook'),
     })
   )
 

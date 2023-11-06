@@ -10,6 +10,7 @@ export const buildPlugins = ({
   paths,
   isDev,
   apiUrl,
+  project,
 }: BuildOptions): webpack.WebpackPluginInstance[] => {
   const plugins = [
     new HtmlWebpackPlugin({
@@ -39,6 +40,7 @@ export const buildPlugins = ({
       'WEBPACK_IS_DEV': isDev,
       'API_URL': JSON.stringify(apiUrl),
       'process.env.NODE_ENV': JSON.stringify(isDev ? 'development' : 'production'),
+      'PROJECT': JSON.stringify(project),
     }),
   ]
 

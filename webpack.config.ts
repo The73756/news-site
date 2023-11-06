@@ -22,5 +22,6 @@ export default function webpack(env: BuildEnv) {
     isDev,
     port,
     apiUrl,
+    project: 'frontend',
   })
 }

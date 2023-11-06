@@ -19,7 +19,7 @@ interface ProfileCardProps extends ProfileSchema {
   onChangeCountry?: (value: Country) => void
 }
 
-const profileVariants = cva('rounded-lg h-1/2  border border-base-content p-4', {
+const profileVariants = cva('rounded-lg h-1/2 min-h-[400px]  border border-base-content p-4', {
   variants: {
     isExcept: {
       true: 'flex items-center justify-center',

@@ -21,6 +21,7 @@ export default {
   globals: {
     WEBPACK_IS_DEV: true,
     API_URL: '',
+    PROJECT: 'jest',
   },
   transformIgnorePatterns: ['/node_modules/(?!(axios)/)'],
 
