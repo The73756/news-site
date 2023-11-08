@@ -8,6 +8,7 @@ declare module '*.css' {
 
 declare const WEBPACK_IS_DEV: boolean
 declare const API_URL: string
+declare const PROJECT: 'storybook' | 'jest' | 'frontend'
 
 type DeepPartial<T> = T extends object
   ? {

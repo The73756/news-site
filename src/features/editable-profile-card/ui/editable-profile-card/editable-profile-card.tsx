@@ -37,10 +37,15 @@ export const EditableProfileCard = () => {
     [ValidateProfileError.INCORRECT_USER_DATA]: t('Пожалуйста, укажите корректное имя и фамилию'),
     [ValidateProfileError.INCORRECT_AGE]: t('Пожалуйста, введите корректный возраст'),
     [ValidateProfileError.NO_DATA]: t('Пожалуйста, заполните все поля'),
+    [ValidateProfileError.INCORRECT_USERNAME]: t(
+      'Имя пользователя должно содержать минимум два символа'
+    ),
   }
 
   useEffect(() => {
-    dispatch(fetchProfileData())
+    if (PROJECT !== 'storybook') {
+      dispatch(fetchProfileData())
+    }
   }, [dispatch])
 
   const onChangeFirstname = useCallback(

@@ -19,5 +19,6 @@
   "Пожалуйста, выберите корректную страну": "Please select a correct country",
   "Пожалуйста, укажите корректное имя и фамилию": "Please enter a correct first and last name",
   "Пожалуйста, введите корректный возраст": "Please enter a correct age",
-  "Пожалуйста, заполните все поля": "Please fill in all fields"
+  "Пожалуйста, заполните все поля": "Please fill in all fields",
+  "Имя пользователя должно содержать минимум два символа": "Username must contain at least two characters"
 }
