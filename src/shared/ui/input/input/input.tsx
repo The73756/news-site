@@ -31,7 +31,7 @@ export const Input = memo(({ className, onChange, value, readonly, ...props }: I
     <input
       {...props}
       className={cls(inputVariants({ readonly }), {}, [className])}
-      value={String(value)}
+      value={value && String(value)}
       readOnly={readonly}
       onChange={onChangeHandler}
     />

@@ -25,6 +25,7 @@ export const updateProfileData = createAsyncThunk<
     // for test mock data
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!data) {
+      // eslint-disable-next-line unicorn/error-message
       throw new Error()
     }
 
