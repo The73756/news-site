@@ -21,6 +21,13 @@ export const updateProfileData = createAsyncThunk<
 
   try {
     const { data } = await extra.api.put<Profile>('/profile', formData)
+
+    // for test mock data
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+    if (!data) {
+      throw new Error()
+    }
+
     return data
   } catch (error) {
     console.log(error)

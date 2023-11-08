@@ -90,7 +90,7 @@ export const WithError: Story = {
           avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
         },
         isLoading: false,
-        readonly: false,
+        readonly: true,
         error: 'Error!',
       },
     }),
