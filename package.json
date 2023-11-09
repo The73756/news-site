@@ -68,6 +68,7 @@
     "daisyui": "^2.51.6",
     "eslint": "^8.42.0",
     "eslint-kit": "^9.1.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "husky": "^8.0.0",
     "identity-obj-proxy": "^3.0.0",
