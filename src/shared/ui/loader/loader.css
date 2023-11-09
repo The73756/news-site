@@ -2,16 +2,18 @@
   display: inline-block;
   width: 80px;
   height: 80px;
+  position: relative;
 }
 
-.spinner:after {
-  content: ' ';
+.spinner-inner {
+  position: absolute;
+  inset: 0;
   display: block;
-  width: 64px;
-  height: 64px;
-  margin: 8px;
+  width: 80%;
+  height: 80%;
+  margin: 10%;
   border-radius: 50%;
-  border: 6px solid;
+  border-style: solid;
   border-color: hsl(var(--nc)) transparent hsl(var(--nc)) transparent;
   animation: spinner 1.2s linear infinite;
 }

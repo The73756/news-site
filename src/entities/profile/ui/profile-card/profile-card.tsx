@@ -73,13 +73,11 @@ export const ProfileCard = ({
   return (
     <div className={cls(profileVariants({ isEditing: !readonly }), {}, [className])}>
       <div className="mb-4 flex items-center justify-center">
-        {data?.avatar && (
-          <Avatar
-            src={data.avatar}
-            alt={`${t('Изображение профиля для')} ${data.username}`}
-            size={200}
-          />
-        )}
+        <Avatar
+          src={String(data?.avatar)}
+          alt={`${t('Изображение профиля для')} ${data?.username}`}
+          size={200}
+        />
       </div>
       <div className="flex  gap-10">
         <div className="flex basis-1/2 flex-col gap-4">

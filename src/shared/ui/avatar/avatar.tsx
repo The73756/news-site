@@ -1,6 +1,7 @@
 import { cva, VariantProps } from 'class-variance-authority'
-import { ImgHTMLAttributes } from 'react'
+import { CSSProperties, ImgHTMLAttributes } from 'react'
 import { cls } from '@/shared/lib/class-names'
+import { Image } from '@/shared/ui/image/image'
 
 type HTMLInputElementProps = Omit<
   ImgHTMLAttributes<HTMLImageElement>,
@@ -21,14 +22,21 @@ interface AvatarProps extends VariantProps<typeof avatarVariants>, HTMLInputElem
 export const Avatar = (props: AvatarProps) => {
   const { className, src, alt, size } = props
 
+  const styles: CSSProperties = {
+    width: size || 'auto',
+    height: size || 'auto',
+  }
+
   return (
-    <img
-      {...props}
-      src={src}
-      width={size || 100}
-      height={size || 100}
-      alt={alt || ''}
-      className={cls(avatarVariants({}), {}, [className])}
-    />
+    <div style={styles}>
+      <Image
+        {...props}
+        src={src}
+        width={size || 100}
+        height={size || 100}
+        alt={alt || ''}
+        className={cls(avatarVariants({}), {}, [className])}
+      />
+    </div>
   )
 }
