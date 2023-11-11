@@ -1,4 +1,4 @@
-import { ImgHTMLAttributes, memo, useState } from 'react'
+import { ImgHTMLAttributes, memo, useEffect, useState } from 'react'
 import placeholderImg from '@/shared/assets/img/placeholder.png'
 import { cls } from '@/shared/lib/class-names'
 import { Loader } from '@/shared/ui'
@@ -22,8 +22,11 @@ interface ImageProps extends HTMLInputElementProps {
 export const Image = memo(
   ({ className, width, height, wrapperClass, alt, src, ...props }: ImageProps) => {
     const [isImgLoading, setIsImgLoading] = useState(true)
-    const [isImgFailure, setIsImgFailure] = useState(false)
-    const srcString = !src || isImgFailure ? placeholderImg : src
+    const [imgSrc, setImgSrc] = useState('')
+
+    useEffect(() => {
+      setImgSrc(src)
+    }, [src])
 
     const onImgLoaded = () => {
       setIsImgLoading(false)
@@ -31,7 +34,7 @@ export const Image = memo(
 
     const onImgError = () => {
       setIsImgLoading(false)
-      setIsImgFailure(true)
+      setImgSrc(placeholderImg)
     }
 
     return (
@@ -54,7 +57,7 @@ export const Image = memo(
           width={width}
           height={height}
           alt={alt}
-          src={srcString}
+          src={imgSrc}
           onLoad={onImgLoaded}
           onError={onImgError}
         />
