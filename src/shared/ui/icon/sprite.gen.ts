@@ -1,5 +1,5 @@
 export interface SpritesMap {
-  nav: 'about' | 'home' | 'profile'
+  nav: 'about' | 'article' | 'home' | 'profile'
   shared: 'arrow' | 'translate'
   theme: 'moon' | 'sun'
 }
@@ -8,6 +8,11 @@ export const SPRITES_META = {
     filePath: 'nav.svg',
     items: {
       about: {
+        viewBox: '0 0 24 24',
+        width: 24,
+        height: 24,
+      },
+      article: {
         viewBox: '0 0 24 24',
         width: 24,
         height: 24,

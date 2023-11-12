@@ -1,5 +1,7 @@
 import { RouteProps } from 'react-router-dom'
 import { AboutPage } from '@/pages/about-page'
+import { ArticleDetailPage } from '@/pages/article-detail-page'
+import { ArticlesPage } from '@/pages/articles-page'
 import { MainPage } from '@/pages/main-page'
 import { NotFoundPage } from '@/pages/not-found-page'
 import { ProfilePage } from '@/pages/profile-page'
@@ -12,6 +14,9 @@ export enum AppRoutes {
   MAIN = 'main',
   ABOUT = 'about',
   PROFILE = 'profile',
+  ARTICLES = 'articles',
+  ARTICLE_DETAIL = 'article_detail',
+
   NOT_FOUND = 'not_found',
 }
 
@@ -19,6 +24,9 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/about',
   [AppRoutes.PROFILE]: '/profile',
+  [AppRoutes.ARTICLES]: '/articles',
+  [AppRoutes.ARTICLE_DETAIL]: '/articles/', //+ id
+
   [AppRoutes.NOT_FOUND]: '*',
 }
 
@@ -36,6 +44,17 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     element: <ProfilePage />,
     authOnly: true,
   },
+  [AppRoutes.ARTICLES]: {
+    path: RoutePath.articles,
+    element: <ArticlesPage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLE_DETAIL]: {
+    path: RoutePath.article_detail + ':id',
+    element: <ArticleDetailPage />,
+    authOnly: true,
+  },
+
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.not_found,
     element: <NotFoundPage />,
