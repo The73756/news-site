@@ -7,6 +7,7 @@ import {
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
 import { NavigateFunction } from 'react-router/dist/lib/hooks'
+import { ArticleDetailsSchema } from '@/entities/article/model'
 import { ProfileSchema } from '@/entities/profile'
 import { UserSchema } from '@/entities/user'
 import { LoginSchema } from '@/features/auth-by-username'
@@ -15,6 +16,7 @@ export interface StateSchema {
   user: UserSchema
   loginForm?: LoginSchema
   profile?: ProfileSchema
+  articleDetails?: ArticleDetailsSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
