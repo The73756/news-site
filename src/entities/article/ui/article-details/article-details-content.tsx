@@ -18,7 +18,7 @@ export const ArticleDetailsContent = memo(({ article }: ArticleDetailsContentPro
       case ArticleBlockType.IMAGE:
         return <ArticleImageBlockComponent />
       case ArticleBlockType.TEXT:
-        return <ArticleTextBlockElement />
+        return <ArticleTextBlockElement block={block} />
       default:
         return null
     }
@@ -33,16 +33,21 @@ export const ArticleDetailsContent = memo(({ article }: ArticleDetailsContentPro
           <time dateTime={article?.createdAt}>{article?.createdAt}</time>
         </div>
       </div>
+
       <div className="mb-8">
         <h2 className="text-4xl font-bold">{article?.title}</h2>
         <Text titleSize="xl" textSize="xl" text={article?.subtitle} />
       </div>
-      <div className="h-[400px] overflow-hidden rounded-xl">
+
+      <div className="mb-8 h-[400px] overflow-hidden rounded-xl">
         <Image className="mx-auto w-auto object-contain" src={article?.img} alt={article?.title} />
       </div>
-      {article?.blocks.map((block) => (
-        <div key={block.id}>{renderBlock(block)}</div>
-      ))}
+
+      <div className="flex flex-col gap-6">
+        {article?.blocks.map((block) => (
+          <div key={block.id}>{renderBlock(block)}</div>
+        ))}
+      </div>
     </>
   )
 })

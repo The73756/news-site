@@ -1,5 +1,5 @@
 export * from './selectors'
 export * from './services'
 export { articleDetailsActions, articleDetailsReducer } from './slice/article-details-slice'
-export { Article, ArticleBlock, ArticleBlockType, ArticleType } from './types/article'
+export * from './types/article'
 export { ArticleDetailsSchema } from './types/article-details-schema'

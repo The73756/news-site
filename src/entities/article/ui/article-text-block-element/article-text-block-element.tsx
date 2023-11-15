@@ -1,10 +1,19 @@
 import { memo } from 'react'
-import { cls } from '@/shared/lib/class-names'
+import { ArticleTextBlock } from '../../model'
 
 interface ArticleTextBlockElementProps {
-  className?: string
+  block: ArticleTextBlock
 }
 
-export const ArticleTextBlockElement = memo(({ className }: ArticleTextBlockElementProps) => {
-  return <div className={cls('', {}, [className])}>ArticleTextBlockElement</div>
+export const ArticleTextBlockElement = memo(({ block }: ArticleTextBlockElementProps) => {
+  return (
+    <>
+      {block.title && <h3 className="font mb-4 text-2xl font-semibold">{block.title}</h3>}
+      {block.paragraphs.map((paragraph) => (
+        <p key={paragraph} className="mb-2">
+          {paragraph}
+        </p>
+      ))}
+    </>
+  )
 })
