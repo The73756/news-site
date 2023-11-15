@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { SkeletonWrapper } from '@/shared/ui/skeleton/skeleton-wrapper'
 import { Skeleton } from './skeleton'
 
 const meta: Meta<typeof Skeleton> = {
@@ -10,6 +11,13 @@ export default meta
 type Story = StoryObj<typeof Skeleton>
 
 export const Basic: Story = {
+  decorators: [
+    (Story) => (
+      <SkeletonWrapper>
+        <Story />
+      </SkeletonWrapper>
+    ),
+  ],
   args: {
     width: '100%',
     height: 50,
@@ -17,6 +25,13 @@ export const Basic: Story = {
 }
 
 export const Circle: Story = {
+  decorators: [
+    (Story) => (
+      <SkeletonWrapper>
+        <Story />
+      </SkeletonWrapper>
+    ),
+  ],
   args: {
     border: '100%',
     width: 100,
@@ -25,6 +40,13 @@ export const Circle: Story = {
 }
 
 export const Image: Story = {
+  decorators: [
+    (Story) => (
+      <SkeletonWrapper>
+        <Story />
+      </SkeletonWrapper>
+    ),
+  ],
   args: {
     isImage: true,
     width: 200,

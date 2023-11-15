@@ -5,6 +5,7 @@ import { cls } from '@/shared/lib/class-names'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/dynamic-module-loader'
 import { useAppDispatch } from '@/shared/lib/hooks'
 import { Skeleton, Text } from '@/shared/ui'
+import { SkeletonWrapper } from '@/shared/ui/skeleton/skeleton-wrapper'
 import {
   articleDetailsReducer,
   fetchArticleById,
@@ -34,18 +35,18 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   if (isLoading) {
     content = (
       <div className="max-w-screen-md">
-        <div className="mb-8 flex flex-col gap-3">
+        <SkeletonWrapper className="mb-8 flex flex-col gap-3">
           <Skeleton width={150} height={150} border="100%" />
           <Skeleton width="60%" height={20} />
           <Skeleton width="40%" height={18} />
-        </div>
-        <div className="flex flex-col gap-2">
+        </SkeletonWrapper>
+        <SkeletonWrapper className="flex flex-col gap-2">
           <Skeleton width="100%" height={10} />
           <Skeleton width="90%" height={10} />
           <Skeleton width="95%" height={10} />
           <Skeleton width="70%" height={10} />
           <Skeleton width="80%" height={10} />
-        </div>
+        </SkeletonWrapper>
       </div>
     )
   } else if (error) {
