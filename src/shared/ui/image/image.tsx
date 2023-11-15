@@ -1,7 +1,8 @@
 import { ImgHTMLAttributes, memo, useEffect, useState } from 'react'
 import placeholderImg from '@/shared/assets/img/placeholder.png'
 import { cls } from '@/shared/lib/class-names'
-import { Loader } from '@/shared/ui'
+import { Skeleton } from '@/shared/ui'
+import { SkeletonWrapper } from '@/shared/ui/skeleton/skeleton-wrapper'
 
 type HTMLInputElementProps = Omit<
   ImgHTMLAttributes<HTMLImageElement>,
@@ -9,23 +10,22 @@ type HTMLInputElementProps = Omit<
 >
 
 interface ImageProps extends HTMLInputElementProps {
-  alt: string
-  src: string
+  alt: string | undefined
+  src: string | undefined
   className?: string
   wrapperClass?: string
   width?: number
   height?: number
-  loaderWidth?: number
-  loaderHeight?: number
+  loaderSize?: number
 }
 
 export const Image = memo(
-  ({ className, width, height, wrapperClass, alt, src, ...props }: ImageProps) => {
+  ({ className, width, height, wrapperClass, alt, src, loaderSize, ...props }: ImageProps) => {
     const [isImgLoading, setIsImgLoading] = useState(true)
     const [imgSrc, setImgSrc] = useState('')
 
     useEffect(() => {
-      setImgSrc(src)
+      setImgSrc(String(src))
     }, [src])
 
     const onImgLoaded = () => {
@@ -38,11 +38,11 @@ export const Image = memo(
     }
 
     return (
-      <div className={cls('relative', {}, [wrapperClass])}>
+      <div className={cls('relative h-full w-full', {}, [wrapperClass])}>
         {isImgLoading && src && (
-          <div className="center absolute">
-            <Loader />
-          </div>
+          <SkeletonWrapper className="center absolute h-full w-full">
+            <Skeleton isImage={true} width="100%" height="100%" />
+          </SkeletonWrapper>
         )}
 
         <img

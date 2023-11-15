@@ -44,5 +44,7 @@ export interface Article {
   views: number
   createdAt: string
   type: ArticleType[]
+  author: string
+  authorAvatar: string
   blocks: ArticleBlockBase[]
 }

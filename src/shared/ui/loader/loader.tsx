@@ -10,6 +10,7 @@ interface LoaderProps {
 }
 
 export const Loader = ({ className, size, borderWidth, borderColor }: LoaderProps) => {
+  const spinnerSize = size || 80
   const borderColorString = useMemo(
     () =>
       `${borderColor || 'hsl(var(--nc))'} transparent ${
@@ -20,18 +21,18 @@ export const Loader = ({ className, size, borderWidth, borderColor }: LoaderProp
 
   const spinnerStyles: CSSProperties = useMemo(
     () => ({
-      width: size || 80,
-      height: size || 80,
+      width: spinnerSize,
+      height: spinnerSize,
     }),
-    [size]
+    [spinnerSize]
   )
 
   const spinnerInnerStyles: CSSProperties = useMemo(
     () => ({
-      borderWidth: borderWidth || 6,
+      borderWidth: borderWidth || spinnerSize / 15,
       borderColor: borderColorString,
     }),
-    [borderColorString, borderWidth]
+    [borderColorString, borderWidth, spinnerSize]
   )
 
   return (

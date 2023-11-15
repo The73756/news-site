@@ -1,4 +1,3 @@
-import { cva, VariantProps } from 'class-variance-authority'
 import { CSSProperties, ImgHTMLAttributes } from 'react'
 import { cls } from '@/shared/lib/class-names'
 import { Image } from '@/shared/ui/image/image'
@@ -8,11 +7,7 @@ type HTMLInputElementProps = Omit<
   'src' | 'alt' | 'width' | 'height'
 >
 
-const avatarVariants = cva('rounded-full', {
-  variants: {},
-})
-
-interface AvatarProps extends VariantProps<typeof avatarVariants>, HTMLInputElementProps {
+interface AvatarProps extends HTMLInputElementProps {
   className?: string
   src: string
   alt?: string
@@ -28,14 +23,15 @@ export const Avatar = (props: AvatarProps) => {
   }
 
   return (
-    <div style={styles}>
+    <div style={styles} className="overflow-hidden rounded-full">
       <Image
+        loaderSize={size}
         {...props}
         src={src}
         width={size || 100}
         height={size || 100}
         alt={alt || ''}
-        className={cls(avatarVariants({}), {}, [className])}
+        className={cls('', {}, [className])}
       />
     </div>
   )

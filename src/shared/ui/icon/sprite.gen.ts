@@ -1,6 +1,6 @@
 export interface SpritesMap {
   nav: 'about' | 'article' | 'home' | 'profile'
-  shared: 'arrow' | 'image' | 'translate'
+  shared: 'arrow' | 'eye' | 'image' | 'translate'
   theme: 'moon' | 'sun'
 }
 export const SPRITES_META = {
@@ -36,6 +36,11 @@ export const SPRITES_META = {
         viewBox: '0 0 131 131',
         width: 131,
         height: 131,
+      },
+      eye: {
+        viewBox: '0 0 64 64',
+        width: 64,
+        height: 64,
       },
       image: {
         viewBox: '0 0 20 18',

@@ -4,7 +4,8 @@ import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/class-names'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/dynamic-module-loader'
 import { useAppDispatch } from '@/shared/lib/hooks'
-import { Skeleton, Text } from '@/shared/ui'
+import { Avatar, Skeleton, Text } from '@/shared/ui'
+import { Image } from '@/shared/ui/image/image'
 import { SkeletonWrapper } from '@/shared/ui/skeleton/skeleton-wrapper'
 import {
   articleDetailsReducer,
@@ -29,6 +30,12 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const isLoading = useSelector(getArticleDetailsIsLoading)
   const article = useSelector(getArticleDetails)
   const error = useSelector(getArticleDetailsError)
+
+  useEffect(() => {
+    if (PROJECT !== 'storybook') {
+      dispatch(fetchArticleById(id))
+    }
+  }, [dispatch, id])
 
   let content
 
@@ -61,14 +68,29 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
       />
     )
   } else {
-    content = <div>ArticleDetails!</div>
+    content = (
+      <>
+        <div className="mb-3 flex items-center gap-4">
+          <Avatar size={40} src={String(article?.authorAvatar)} />
+          <div className="flex items-center gap-2">
+            <Text title={article?.author} titleWeight="semibold" />
+            <time dateTime={article?.createdAt}>{article?.createdAt}</time>
+          </div>
+        </div>
+        <div className="mb-8">
+          <h2 className="text-4xl font-bold">{article?.title}</h2>
+          <Text titleSize="xl" textSize="xl" text={article?.subtitle} />
+        </div>
+        <div className="h-[500px] overflow-hidden rounded-xl">
+          <Image
+            className="mx-auto w-auto object-contain"
+            src={article?.img}
+            alt={article?.title}
+          />
+        </div>
+      </>
+    )
   }
-
-  useEffect(() => {
-    if (PROJECT !== 'storybook') {
-      dispatch(fetchArticleById(id))
-    }
-  }, [dispatch, id])
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
