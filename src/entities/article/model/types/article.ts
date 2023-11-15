@@ -46,5 +46,5 @@ export interface Article {
   type: ArticleType[]
   author: string
   authorAvatar: string
-  blocks: ArticleBlockBase[]
+  blocks: ArticleBlock[]
 }
