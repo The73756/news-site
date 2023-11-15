@@ -47,7 +47,7 @@ export const ProfileCard = ({
 }: ProfileCardProps) => {
   const { t } = useTranslation('profile')
 
-  if (isLoading) {
+  if (isLoading || isLoading === undefined) {
     return (
       <div className={cls(profileVariants({ isExcept: isLoading }), {}, [className])}>
         <Loader />

@@ -13,7 +13,30 @@ type Story = StoryObj<typeof ArticleDetails>
 export const Basic: Story = {
   decorators: [
     StoreDecorator({
-      articleDetails: {},
+      articleDetails: {
+        isLoading: false,
+      },
+    }),
+  ],
+}
+
+export const Loading: Story = {
+  decorators: [
+    StoreDecorator({
+      articleDetails: {
+        isLoading: true,
+      },
+    }),
+  ],
+}
+
+export const Error: Story = {
+  decorators: [
+    StoreDecorator({
+      articleDetails: {
+        isLoading: false,
+        error: 'Error!',
+      },
     }),
   ],
 }

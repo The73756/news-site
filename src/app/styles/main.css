@@ -16,6 +16,10 @@
     min-height: calc(100vh - var(--navbar-h));
   }
 
+  .full-height {
+    height: calc(100vh - var(--navbar-h));
+  }
+
   .center {
     top: 50%;
     left: 50%;

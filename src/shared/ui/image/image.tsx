@@ -50,7 +50,7 @@ export const Image = memo(
           className={cls(
             'block h-full w-full',
             {
-              isImgLoading: 'opacity-0',
+              'sr-only': isImgLoading,
             },
             [className]
           )}

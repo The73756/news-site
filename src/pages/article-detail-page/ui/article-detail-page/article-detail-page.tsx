@@ -16,9 +16,9 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
   }
 
   return (
-    <div className={cls('', {}, [className])}>
+    <>
       <ArticleDetails id={String(id)} />
-    </div>
+    </>
   )
 }
 
