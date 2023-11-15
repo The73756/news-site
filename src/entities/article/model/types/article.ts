@@ -25,6 +25,7 @@ export interface ArticleCodeBlock extends ArticleBlockBase {
   id: string
   type: ArticleBlockType.CODE
   code: string
+  language: string
 }
 
 export interface ArticleImageBlock extends ArticleBlockBase {

@@ -36,6 +36,7 @@
         {
           "id": "4",
           "type": "CODE",
+          "language": "html",
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
         },
         {
@@ -56,6 +57,7 @@
         {
           "id": "3",
           "type": "CODE",
+          "language": "javascript",
           "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
         },
         {

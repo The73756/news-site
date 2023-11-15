@@ -14,7 +14,7 @@ export const ArticleDetailsContent = memo(({ article }: ArticleDetailsContentPro
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
-        return <ArticleCodeBlockElement />
+        return <ArticleCodeBlockElement block={block} />
       case ArticleBlockType.IMAGE:
         return <ArticleImageBlockComponent />
       case ArticleBlockType.TEXT:

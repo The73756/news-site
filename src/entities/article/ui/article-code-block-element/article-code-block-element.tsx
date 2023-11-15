@@ -1,10 +1,11 @@
 import { memo } from 'react'
-import { cls } from '@/shared/lib/class-names'
+import { Code } from '@/shared/ui'
+import { ArticleCodeBlock } from '../../model'
 
 interface ArticleCodeBlockElementProps {
-  className?: string
+  block: ArticleCodeBlock
 }
 
-export const ArticleCodeBlockElement = memo(({ className }: ArticleCodeBlockElementProps) => {
-  return <div className={cls('', {}, [className])}>ArticleCodeBlockElement</div>
+export const ArticleCodeBlockElement = memo(({ block }: ArticleCodeBlockElementProps) => {
+  return <Code codeText={block.code} language={block.language} />
 })
