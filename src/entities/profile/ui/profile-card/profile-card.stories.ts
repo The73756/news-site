@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Country } from '@/entities/country'
 import { Currency } from '@/entities/currency'
+import AvatarImage from '@/shared/assets/img/avatar.png'
 import { ProfileCard } from './profile-card'
 
 const meta: Meta<typeof ProfileCard> = {
@@ -19,7 +20,7 @@ export const Basic: Story = {
       first: 'the',
       country: Country.RUSSIA,
       currency: Currency.RUB,
-      avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+      avatar: AvatarImage,
       age: 10,
       city: 'Москва',
     },
@@ -36,7 +37,7 @@ export const Editable: Story = {
       first: 'the',
       country: Country.RUSSIA,
       currency: Currency.RUB,
-      avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+      avatar: AvatarImage,
       age: 10,
       city: 'Москва',
     },
@@ -53,7 +54,7 @@ export const Loading: Story = {
       first: 'the',
       country: Country.RUSSIA,
       currency: Currency.RUB,
-      avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+      avatar: AvatarImage,
       age: 10,
       city: 'Москва',
     },

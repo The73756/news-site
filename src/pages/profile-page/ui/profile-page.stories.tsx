@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { Country } from '@/entities/country'
 import { Currency } from '@/entities/currency/model'
+import AvatarImage from '@/shared/assets/img/avatar.png'
 import { StoreDecorator } from '@/shared/config/storybook'
 import ProfilePage from './profile-page'
 
@@ -13,7 +14,7 @@ const profileData = {
     country: Country.RUSSIA,
     city: 'Moscow',
     username: 'admin',
-    avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+    src: AvatarImage,
   },
   form: {
     first: 'The',
@@ -23,7 +24,7 @@ const profileData = {
     country: Country.RUSSIA,
     city: 'Moscow',
     username: 'admin',
-    avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+    src: AvatarImage,
   },
 }
 

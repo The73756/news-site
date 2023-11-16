@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import AvatarImage from '@/shared/assets/img/avatar.png'
 import { Avatar } from './avatar'
 
 const meta: Meta<typeof Avatar> = {
@@ -12,6 +13,6 @@ type Story = StoryObj<typeof Avatar>
 export const Basic: Story = {
   args: {
     size: 100,
-    src: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+    src: AvatarImage,
   },
 }
