@@ -9,7 +9,6 @@ const textVariants = cva('', {
     },
     titleSize: {
       default: 'text-xl',
-      lg: 'text-lg',
       xl: 'text-2xl',
     },
     textSize: {
@@ -52,7 +51,6 @@ export const Text = memo((props: TextProps) => {
 
   const titleClasses = cls(textVariants({ titleSize, titleWeight }), {}, [titleClassName])
   const textClasses = cls(textVariants({ textSize }), {}, [textClassName])
-
   return (
     <div className={textVariants({ theme, className, align })}>
       {title && <div className={titleClasses}>{title}</div>}

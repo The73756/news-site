@@ -32,9 +32,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       >
         <div className="w-full">
           <div className="flex-1">
-            <AppLink to="/" className="btn-ghost btn text-xl normal-case">
-              {t('Новостной сайт')}
-            </AppLink>
+            <h1>
+              <AppLink to="/" className="btn-ghost btn text-xl normal-case">
+                {t('Новостной сайт')}
+              </AppLink>
+            </h1>
           </div>
 
           <Button onClick={onLogout} className="ml-auto">

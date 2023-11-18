@@ -1,6 +1,6 @@
 export interface SpritesMap {
   nav: 'about' | 'article' | 'home' | 'profile'
-  shared: 'arrow' | 'eye' | 'image' | 'translate' | 'copy' | 'wrap'
+  shared: 'arrow' | 'copy' | 'eye' | 'image' | 'translate' | 'wrap'
   theme: 'moon' | 'sun'
 }
 export const SPRITES_META = {
@@ -37,6 +37,11 @@ export const SPRITES_META = {
         width: 131,
         height: 131,
       },
+      copy: {
+        viewBox: '0 0 91 91',
+        width: 91,
+        height: 91,
+      },
       eye: {
         viewBox: '0 0 64 64',
         width: 64,
@@ -51,11 +56,6 @@ export const SPRITES_META = {
         viewBox: '0 0 43 38',
         width: 43,
         height: 38,
-      },
-      copy: {
-        viewBox: '0 0 91 91',
-        width: 91,
-        height: 91,
       },
       wrap: {
         viewBox: '0 0 24 24',

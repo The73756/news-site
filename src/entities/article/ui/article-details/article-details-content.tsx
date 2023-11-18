@@ -1,6 +1,5 @@
 import { memo, useCallback } from 'react'
-import { Avatar, Text } from '@/shared/ui'
-import { Image } from '@/shared/ui/image/image'
+import { Avatar, Image, Text } from '@/shared/ui'
 import { Article, ArticleBlock, ArticleBlockType } from '../../model'
 import { ArticleCodeBlockElement } from '../article-code-block-element'
 import { ArticleImageBlockComponent } from '../article-image-block-component'
@@ -16,7 +15,7 @@ export const ArticleDetailsContent = memo(({ article }: ArticleDetailsContentPro
       case ArticleBlockType.CODE:
         return <ArticleCodeBlockElement block={block} />
       case ArticleBlockType.IMAGE:
-        return <ArticleImageBlockComponent />
+        return <ArticleImageBlockComponent block={block} />
       case ArticleBlockType.TEXT:
         return <ArticleTextBlockElement block={block} />
       default:

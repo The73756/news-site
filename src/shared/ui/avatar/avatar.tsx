@@ -1,6 +1,6 @@
 import { CSSProperties, ImgHTMLAttributes } from 'react'
 import { cls } from '@/shared/lib/class-names'
-import { Image } from '@/shared/ui/image/image'
+import { Image } from '@/shared/ui'
 
 type HTMLInputElementProps = Omit<
   ImgHTMLAttributes<HTMLImageElement>,

@@ -22,12 +22,14 @@ export const App = () => {
   }, [theme])
 
   return (
-    <div className="h-[100vh] w-full min-w-[320px] overflow-hidden ">
+    <div className="h-[100vh] w-full min-w-[320px] overflow-hidden">
       <Suspense fallback="">
         <Navbar />
         <div className="full-height flex">
           <Sidebar />
-          <main className="flex-1 overflow-auto p-5">{inited && <AppRouter />}</main>
+          <div className="mx-auto flex w-full justify-center overflow-auto">
+            <main className="w-full max-w-[1520px] p-5">{inited && <AppRouter />}</main>
+          </div>
         </div>
       </Suspense>
     </div>

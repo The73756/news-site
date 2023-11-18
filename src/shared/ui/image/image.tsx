@@ -17,10 +17,21 @@ interface ImageProps extends HTMLInputElementProps {
   width?: number
   height?: number
   loaderSize?: number
+  loaderHeight?: number | string
 }
 
 export const Image = memo(
-  ({ className, width, height, wrapperClass, alt, src, loaderSize, ...props }: ImageProps) => {
+  ({
+    className,
+    width,
+    height,
+    wrapperClass,
+    alt,
+    src,
+    loaderSize,
+    loaderHeight,
+    ...props
+  }: ImageProps) => {
     const [isImgLoading, setIsImgLoading] = useState(true)
     const [imgSrc, setImgSrc] = useState('')
 
@@ -38,9 +49,9 @@ export const Image = memo(
     }
 
     return (
-      <div className={cls('relative h-full w-full', {}, [wrapperClass])}>
+      <>
         {isImgLoading && src && (
-          <SkeletonWrapper className="center absolute h-full w-full">
+          <SkeletonWrapper className="h-full w-full" height={loaderHeight}>
             <Skeleton isImage={true} width="100%" height="100%" />
           </SkeletonWrapper>
         )}
@@ -48,7 +59,7 @@ export const Image = memo(
         <img
           {...props}
           className={cls(
-            'block h-full w-full',
+            'block h-full',
             {
               'sr-only': isImgLoading,
             },
@@ -61,7 +72,7 @@ export const Image = memo(
           onLoad={onImgLoaded}
           onError={onImgError}
         />
-      </div>
+      </>
     )
   }
 )
