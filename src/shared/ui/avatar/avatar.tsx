@@ -14,12 +14,11 @@ interface AvatarProps extends HTMLInputElementProps {
   size?: number
 }
 
-export const Avatar = (props: AvatarProps) => {
-  const { className, src, alt, size } = props
-
+export const Avatar = ({ className, src, alt, size, ...props }: AvatarProps) => {
   const styles: CSSProperties = {
     width: size || 'auto',
     height: size || 'auto',
+    minWidth: size || 'none',
   }
 
   return (
