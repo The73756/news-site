@@ -1,6 +1,5 @@
 import { memo } from 'react'
-import { Skeleton } from '@/shared/ui'
-import { SkeletonWrapper } from '@/shared/ui/skeleton/skeleton-wrapper'
+import { Skeleton, SkeletonWrapper } from '@/shared/ui'
 
 export const ArticleDetailsLoader = memo(() => {
   return (

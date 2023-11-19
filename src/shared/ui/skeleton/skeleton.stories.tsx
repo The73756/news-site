@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { SkeletonWrapper } from '@/shared/ui/skeleton/skeleton-wrapper'
 import { Skeleton } from './skeleton'
+import { SkeletonWrapper } from './skeleton-wrapper'
 
 const meta: Meta<typeof Skeleton> = {
   component: Skeleton,

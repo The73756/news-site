@@ -16,7 +16,7 @@ export const SkeletonWrapper = ({
   }
 
   return (
-    <div style={styles} className={cls('animate-pulse', {}, [className])} role="status">
+    <div style={styles} className={cls('relative animate-pulse', {}, [className])} role="status">
       {children}
       <span className="sr-only">Loading...</span>
     </div>

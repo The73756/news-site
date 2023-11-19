@@ -1,8 +1,7 @@
 import { ImgHTMLAttributes, memo, useEffect, useState } from 'react'
 import placeholderImg from '@/shared/assets/img/placeholder.png'
 import { cls } from '@/shared/lib/class-names'
-import { Skeleton } from '@/shared/ui'
-import { SkeletonWrapper } from '@/shared/ui/skeleton/skeleton-wrapper'
+import { Skeleton, SkeletonWrapper } from '@/shared/ui'
 
 type HTMLInputElementProps = Omit<
   ImgHTMLAttributes<HTMLImageElement>,
