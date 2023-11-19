@@ -1,10 +1,5 @@
-import axios from 'axios'
-import { TestAsyncThunk } from '@/shared/lib/tests'
-import { fetchArticleById } from './fetch-article-by-id'
+import { Article, articleDetailsReducer, ArticleDetailsSchema, fetchArticleById } from '..'
 
-jest.mock('axios')
-
-const mockedAxios = jest.mocked(axios, true)
 const data = {
   id: '1',
   title: 'Javascript news',
@@ -40,25 +35,34 @@ const data = {
   ],
 }
 
-describe('fetch-article-by-id', () => {
-  test('successful fetch data', async () => {
-    mockedAxios.get.mockReturnValue(Promise.resolve({ data }))
+describe('profile-slice', () => {
+  test('test fetch article by id pending', () => {
+    const state: DeepPartial<ArticleDetailsSchema> = {
+      isLoading: false,
+      error: 'Error!',
+      data: undefined,
+    }
 
-    const thunk = new TestAsyncThunk((num: string) => fetchArticleById(num))
-    const result = await thunk.callThunk('1')
-
-    expect(mockedAxios.get).toHaveBeenCalled()
-
-    expect(result.meta.requestStatus).toBe('fulfilled')
-    expect(result.payload).toEqual(data)
+    expect(articleDetailsReducer(state as ArticleDetailsSchema, fetchArticleById.pending)).toEqual({
+      isLoading: true,
+      error: undefined,
+    })
   })
 
-  test('error fetch data', async () => {
-    mockedAxios.get.mockReturnValue(Promise.reject({ status: 403 }))
+  test('test fetch article by id fulfilled', () => {
+    const state: DeepPartial<ArticleDetailsSchema> = {
+      isLoading: true,
+    }
 
-    const thunk = new TestAsyncThunk((num: string) => fetchArticleById(num))
-    const result = await thunk.callThunk('1')
-
-    expect(result.meta.requestStatus).toBe('rejected')
+    expect(
+      articleDetailsReducer(
+        state as ArticleDetailsSchema,
+        fetchArticleById.fulfilled(data as Article, '1', '')
+      )
+    ).toEqual({
+      isLoading: false,
+      error: undefined,
+      data,
+    })
   })
 })
