@@ -1,4 +1,5 @@
 import { CSSProperties, memo } from 'react'
+import { cls } from '@/shared/lib/class-names'
 import { Icon } from '@/shared/ui'
 
 interface SkeletonProps {
@@ -9,7 +10,7 @@ interface SkeletonProps {
   isImage?: boolean
 }
 
-export const Skeleton = memo(({ width, height, border, isImage }: SkeletonProps) => {
+export const Skeleton = memo(({ width, height, border, isImage, className }: SkeletonProps) => {
   const styles: CSSProperties = {
     maxWidth: width,
     height,
@@ -19,7 +20,11 @@ export const Skeleton = memo(({ width, height, border, isImage }: SkeletonProps)
   return (
     <div
       style={styles}
-      className="flex h-full w-full items-center justify-center rounded-xl bg-base-content/30"
+      className={cls(
+        'flex h-full w-full items-center justify-center rounded-xl bg-base-content/30',
+        {},
+        [className]
+      )}
     >
       {isImage && (
         <Icon

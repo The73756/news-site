@@ -38,8 +38,13 @@ export const ArticleDetailsContent = memo(({ article }: ArticleDetailsContentPro
         <Text titleSize="xl" textSize="xl" text={article?.subtitle} />
       </div>
 
-      <div className="mb-8 h-[400px] overflow-hidden rounded-xl">
-        <Image className="mx-auto w-auto object-contain" src={article?.img} alt={article?.title} />
+      <div className="mb-8 overflow-hidden rounded-xl">
+        <Image
+          className="mx-auto max-h-[400px] object-contain"
+          src={article?.img}
+          alt={article?.title}
+          loaderHeight={400}
+        />
       </div>
 
       <div className="flex flex-col gap-6">
