@@ -24,7 +24,7 @@ export const App = () => {
   return (
     <Suspense fallback="">
       <Navbar />
-      <div className="full-height flex overflow-hidden">
+      <div className="full-height relative flex overflow-hidden">
         <Sidebar />
         <div className="full-height mx-auto flex w-full justify-center overflow-auto">
           <div className="w-full max-w-[1520px]">
