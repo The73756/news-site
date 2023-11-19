@@ -1,8 +1,8 @@
 import '@/app/styles/main.css'
 import { withThemeByDataAttribute } from '@storybook/addon-styling'
 import type { Preview } from '@storybook/react'
+import { withRouter } from 'storybook-addon-react-router-v6'
 import { Theme } from '@/app/providers/theme-provider'
-import { RouterDecorator } from '@/shared/config/storybook'
 
 const preview: Preview = {
   parameters: {
@@ -25,7 +25,7 @@ export const decorators = [
     defaultTheme: 'dark',
     attributeName: 'data-theme',
   }),
-  RouterDecorator,
+  withRouter,
 ]
 
 export default preview

@@ -6,6 +6,12 @@ import ArticleDetailPage from './article-detail-page'
 const meta: Meta<typeof ArticleDetailPage> = {
   component: ArticleDetailPage,
   title: 'pages/article-detail-page',
+  parameters: {
+    reactRouter: {
+      routePath: '/:id',
+      routeParams: { id: 1 },
+    },
+  },
 }
 
 export default meta
