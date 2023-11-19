@@ -22,16 +22,16 @@ export const App = () => {
   }, [theme])
 
   return (
-    <div className="min-w-[320px] overflow-hidden">
-      <Suspense fallback="">
-        <Navbar />
-        <div className="full-height flex overflow-hidden">
-          <Sidebar />
-          <div className="mx-auto flex w-full justify-center overflow-auto">
-            <main className="w-full max-w-[1520px] p-5">{inited && <AppRouter />}</main>
+    <Suspense fallback="">
+      <Navbar />
+      <div className="full-height flex overflow-hidden">
+        <Sidebar />
+        <div className="full-height mx-auto flex w-full justify-center overflow-auto">
+          <div className="w-full max-w-[1520px]">
+            <main className="p-5">{inited && <AppRouter />}</main>
           </div>
         </div>
-      </Suspense>
-    </div>
+      </div>
+    </Suspense>
   )
 }

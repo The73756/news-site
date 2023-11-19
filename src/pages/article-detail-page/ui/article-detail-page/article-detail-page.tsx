@@ -30,15 +30,17 @@ const ArticleDetailPage = ({ className }: ArticleDetailPageProps) => {
             user: {
               username: 'user 1',
               id: '1',
+              avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
             },
           },
           {
             id: '2',
             articleId: '2',
-            text: 'comment 2',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur autem consectetur, consequatur corporis debitis doloremque eaque eligendi eveniet facere, fugit hic ipsum nostrum nulla quam, sint ullam velit! Cum?',
             user: {
               username: 'user 2',
               id: '2',
+              avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
             },
           },
         ]}

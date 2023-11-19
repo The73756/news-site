@@ -12,7 +12,7 @@ interface CommentCardProps {
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
   return (
     <div className={cls('mb-4 flex gap-3', {}, [className])}>
-      <Avatar src="https://avatars.githubusercontent.com/u/94830363?v=4" alt="comment" size={48} />
+      <Avatar src={comment.user.avatar || ''} alt="comment" size={48} />
       <div className="flex-grow-0">
         {comment.user.username}
         <time className="ml-1 text-xs opacity-50">12:45</time>
