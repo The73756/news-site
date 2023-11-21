@@ -18,11 +18,15 @@ import {
   profileReducer,
 } from '../../model'
 
+interface EditableProfileCardProps {
+  id: string
+}
+
 const reducers: ReducersList = {
   profile: profileReducer,
 }
 
-export const EditableProfileCard = () => {
+export const EditableProfileCard = ({ id }: EditableProfileCardProps) => {
   const { t } = useTranslation('profile')
   const dispatch = useAppDispatch()
   const formData = useSelector(getProfileForm)
@@ -42,7 +46,7 @@ export const EditableProfileCard = () => {
     ),
   }
 
-  useInitialEffect(() => dispatch(fetchProfileData()))
+  useInitialEffect(() => dispatch(fetchProfileData(id)))
 
   const onChangeFirstname = useCallback(
     (value?: string) => {

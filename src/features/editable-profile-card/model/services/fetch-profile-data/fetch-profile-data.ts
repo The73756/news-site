@@ -2,13 +2,17 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '@/app/providers/store-provider'
 import { Profile } from '@/entities/profile'
 
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<string>>(
   'profile/fetchProfileData',
-  async (_, thunkAPI) => {
+  async (id, thunkAPI) => {
     const { extra, rejectWithValue } = thunkAPI
 
+    if (!id) {
+      rejectWithValue('id not passed')
+    }
+
     try {
-      const { data } = await extra.api.get<Profile>('/profile')
+      const { data } = await extra.api.get<Profile>('/profile/' + id)
 
       // for test mock data
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition

@@ -23,7 +23,7 @@ describe('fetch-profile-data', () => {
     mockedAxios.get.mockReturnValue(Promise.resolve({ data }))
 
     const thunk = new TestAsyncThunk(fetchProfileData)
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk('1')
 
     expect(mockedAxios.get).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('fulfilled')
@@ -34,7 +34,7 @@ describe('fetch-profile-data', () => {
     mockedAxios.get.mockReturnValue(Promise.reject({ status: 403 }))
 
     const thunk = new TestAsyncThunk(fetchProfileData)
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk('1')
 
     expect(result.meta.requestStatus).toBe('rejected')
   })

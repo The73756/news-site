@@ -122,7 +122,8 @@
       "role": "USER"
     }
   ],
-  "profile": {
+  "profile": [{
+    "id": 1,
     "first": "fasdfasdfsdf",
     "lastname": "Иванов",
     "age": 11,
@@ -131,5 +132,15 @@
     "city": "Москва",
     "username": "the73756",
     "avatar": "https://avatars.githubusercontent.com/u/94830363?v=4"
-  }
+  },{
+    "id": 2,
+    "first": "name",
+    "lastname": "lastname",
+    "age": 11,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Москва",
+    "username": "username",
+    "avatar": ""
+  }]
 }

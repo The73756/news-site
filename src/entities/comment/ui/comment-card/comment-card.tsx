@@ -1,6 +1,7 @@
 import { memo } from 'react'
+import { RoutePath } from '@/app/providers/router'
 import { cls } from '@/shared/lib/class-names'
-import { Avatar, Skeleton, SkeletonWrapper } from '@/shared/ui'
+import { AppLink, Avatar, Skeleton, SkeletonWrapper } from '@/shared/ui'
 import { CommentItem } from '../../model'
 
 interface CommentCardProps {
@@ -28,9 +29,11 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
 
   return (
     <div className={cls('mb-4 flex gap-3', {}, [className])}>
-      <Avatar src={comment.user.avatar || ''} alt="comment" size={48} />
+      <AppLink to={`${RoutePath.profile}${comment.user.id}`}>
+        <Avatar src={comment.user.avatar || ''} alt={comment.user.username} size={48} />
+      </AppLink>
       <div>
-        {comment.user.username}
+        <AppLink to={`${RoutePath.profile}${comment.user.id}`}>{comment.user.username}</AppLink>
         <time className="ml-1 text-xs opacity-50">12:45</time>
         <div className="rounded-lg bg-neutral px-3 py-2">{comment.text}</div>
       </div>
