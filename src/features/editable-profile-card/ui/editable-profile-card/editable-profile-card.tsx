@@ -1,11 +1,11 @@
-import { useCallback, useEffect } from 'react'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { Country } from '@/entities/country'
 import { Currency } from '@/entities/currency'
 import { ProfileCard, ValidateProfileError } from '@/entities/profile'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/dynamic-module-loader'
-import { useAppDispatch } from '@/shared/lib/hooks'
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import { Text } from '@/shared/ui'
 import {
   fetchProfileData,
@@ -42,11 +42,7 @@ export const EditableProfileCard = () => {
     ),
   }
 
-  useEffect(() => {
-    if (PROJECT !== 'storybook') {
-      dispatch(fetchProfileData())
-    }
-  }, [dispatch])
+  useInitialEffect(() => dispatch(fetchProfileData()))
 
   const onChangeFirstname = useCallback(
     (value?: string) => {

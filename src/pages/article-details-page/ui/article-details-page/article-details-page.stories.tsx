@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleBlockType, ArticleType } from '@/entities/article/model'
 import { StoreDecorator } from '@/shared/config/storybook'
-import ArticleDetailPage from './article-detail-page'
+import ArticleDetailsPage from './article-details-page'
 
-const meta: Meta<typeof ArticleDetailPage> = {
-  component: ArticleDetailPage,
-  title: 'pages/article-detail-page',
+const meta: Meta<typeof ArticleDetailsPage> = {
+  component: ArticleDetailsPage,
+  title: 'pages/article-details-page',
   parameters: {
     reactRouter: {
       routePath: '/:id',
@@ -15,7 +15,7 @@ const meta: Meta<typeof ArticleDetailPage> = {
 }
 
 export default meta
-type Story = StoryObj<typeof ArticleDetailPage>
+type Story = StoryObj<typeof ArticleDetailsPage>
 
 const article = {
   isLoading: false,

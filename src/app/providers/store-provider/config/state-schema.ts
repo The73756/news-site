@@ -10,6 +10,7 @@ import { NavigateFunction } from 'react-router/dist/lib/hooks'
 import { ArticleDetailsSchema } from '@/entities/article/model'
 import { ProfileSchema } from '@/entities/profile'
 import { UserSchema } from '@/entities/user'
+import { ArticleCommentListSchema } from '@/features/article-comment-list'
 import { LoginSchema } from '@/features/auth-by-username'
 
 export interface StateSchema {
@@ -17,6 +18,7 @@ export interface StateSchema {
   loginForm?: LoginSchema
   profile?: ProfileSchema
   articleDetails?: ArticleDetailsSchema
+  articleDetailsComments?: ArticleCommentListSchema
 }
 
 export type StateSchemaKey = keyof StateSchema

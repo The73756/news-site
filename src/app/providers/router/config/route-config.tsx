@@ -1,6 +1,6 @@
 import { RouteProps } from 'react-router-dom'
 import { AboutPage } from '@/pages/about-page'
-import { ArticleDetailPage } from '@/pages/article-detail-page'
+import { ArticleDetailsPage } from '@/pages/article-details-page'
 import { ArticlesPage } from '@/pages/articles-page'
 import { MainPage } from '@/pages/main-page'
 import { NotFoundPage } from '@/pages/not-found-page'
@@ -51,7 +51,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   },
   [AppRoutes.ARTICLE_DETAIL]: {
     path: RoutePath.article_detail + ':id',
-    element: <ArticleDetailPage />,
+    element: <ArticleDetailsPage />,
     authOnly: true,
   },
 

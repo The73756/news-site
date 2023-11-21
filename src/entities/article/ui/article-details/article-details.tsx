@@ -1,9 +1,9 @@
-import { memo, useEffect } from 'react'
+import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { ArticleDetailsLoader } from '@/entities/article/ui/article-details/article-details-loader'
 import { cls } from '@/shared/lib/class-names'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/dynamic-module-loader'
-import { useAppDispatch } from '@/shared/lib/hooks'
+import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import {
   articleDetailsReducer,
   fetchArticleById,
@@ -29,11 +29,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
   const article = useSelector(getArticleDetails)
   const error = useSelector(getArticleDetailsError)
 
-  useEffect(() => {
-    if (PROJECT !== 'storybook') {
-      dispatch(fetchArticleById(id))
-    }
-  }, [dispatch, id])
+  useInitialEffect(() => dispatch(fetchArticleById(id)))
 
   let content
 

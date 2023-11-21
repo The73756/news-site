@@ -12,7 +12,7 @@ interface CommentCardProps {
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
   if (isLoading) {
     return (
-      <SkeletonWrapper className="mb-4 flex gap-3">
+      <SkeletonWrapper className={cls('mb-4 flex gap-3', {}, [className])}>
         <Skeleton height={48} width={48} border="100%" isImage={true} />
         <div className="w-full">
           <div className="mb-2 flex w-full gap-1">
