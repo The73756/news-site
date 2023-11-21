@@ -64,10 +64,74 @@ const article = {
   },
 }
 
+const comments = {
+  ids: ['1', '2', '3'],
+  entities: {
+    '1': {
+      id: '1',
+      text: 'some comment',
+      articleId: '1',
+      user: {
+        id: '1',
+        username: 'admin',
+        avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+      },
+    },
+    '2': {
+      id: '2',
+      text: 'some comment 2',
+      articleId: '1',
+      user: {
+        id: '1',
+        username: 'admin',
+        avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+      },
+    },
+    '3': {
+      id: '3',
+      text: 'some comment 3',
+      articleId: '1',
+      user: {
+        id: '1',
+        username: 'admin',
+        avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
+      },
+    },
+  },
+}
+
 export const Basic: Story = {
   decorators: [
     StoreDecorator({
       articleDetails: article,
+      articleDetailsComments: comments,
     }),
   ],
+}
+
+export const Loading: Story = {
+  decorators: [
+    StoreDecorator({
+      articleDetails: { ...article, isLoading: true },
+      articleDetailsComments: { ...comments, isLoading: true },
+    }),
+  ],
+}
+
+export const Error: Story = {
+  decorators: [
+    StoreDecorator({
+      articleDetails: { error: 'Error!' },
+    }),
+  ],
+}
+
+export const NoId: Story = {
+  decorators: [StoreDecorator({})],
+  parameters: {
+    reactRouter: {
+      routePath: '/',
+      routeParams: {},
+    },
+  },
 }
