@@ -2,12 +2,11 @@ import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { CommentCard } from '@/entities/comment'
-import { AddCommentForm } from '@/features/add-comment-form'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/dynamic-module-loader'
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
-import { Header, Text } from '@/shared/ui'
+import { Text } from '@/shared/ui'
 import {
-  articleDetailsCommentsReducer,
+  articleCommentsListReducer,
   fetchCommentsByArticle,
   getArticleCommentListIsLoading,
   getArticleComments,
@@ -18,7 +17,7 @@ interface ArticleCommentListProps {
 }
 
 const reducers: ReducersList = {
-  articleDetailsComments: articleDetailsCommentsReducer,
+  articleDetailsComments: articleCommentsListReducer,
 }
 
 const ArticleCommentList = memo(({ id }: ArticleCommentListProps) => {

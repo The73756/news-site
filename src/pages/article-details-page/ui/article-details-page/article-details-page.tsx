@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 import { ArticleDetails } from '@/entities/article'
-import { ArticleCommentList } from '@/features/article-comment-list'
 import { cls } from '@/shared/lib/class-names'
+import { ArticleCommentBlock } from '@/widgets/article-comment-block'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -19,7 +19,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <>
       <ArticleDetails id={id} />
-      <ArticleCommentList id={id} />
+      <ArticleCommentBlock id={id} />
     </>
   )
 }

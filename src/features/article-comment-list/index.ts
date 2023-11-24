@@ -1,6 +1,7 @@
 export {
   ArticleCommentListSchema,
-  articleDetailsCommentsReducer,
+  articleCommentsListReducer,
+  fetchCommentsByArticle,
   getArticleComments,
 } from './model'
 export { ArticleCommentList } from './ui'

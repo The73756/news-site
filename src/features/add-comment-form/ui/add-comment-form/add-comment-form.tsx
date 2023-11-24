@@ -10,18 +10,18 @@ import {
   addCommentFormReducer,
   getAddCommentFormError,
   getAddCommentFormText,
-  sendComment,
 } from '../../model'
 
 interface AddCommentFormProps {
   className?: string
+  onSendComment: (text: string) => void
 }
 
 const reducers = {
   addCommentForm: addCommentFormReducer,
 }
 
-const AddCommentForm = memo(({ className }: AddCommentFormProps) => {
+const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const text = useSelector(getAddCommentFormText)
@@ -38,9 +38,13 @@ const AddCommentForm = memo(({ className }: AddCommentFormProps) => {
     (e: FormEvent) => {
       e.preventDefault()
 
-      dispatch(sendComment())
+      const clearText = text?.trim()
+      if (!clearText) return
+
+      onSendComment(clearText)
+      onCommentTextChange('')
     },
-    [dispatch]
+    [onCommentTextChange, onSendComment, text]
   )
 
   return (

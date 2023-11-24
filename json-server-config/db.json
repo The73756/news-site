@@ -21,9 +21,7 @@
       "createdAt": "26.02.2022",
       "author": "The73756",
       "authorAvatar": "https://avatars.githubusercontent.com/u/94830363?v=4",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -95,6 +93,20 @@
       "text": "test with date",
       "createdAt": 1700820751806,
       "id": "U3omVfK"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "lorem ipsum sit dolor amet",
+      "createdAt": 1700823319756,
+      "id": "d4eRLWo"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test comment",
+      "createdAt": 1700824217201,
+      "id": "bIfVKhj"
     }
   ],
   "users": [
