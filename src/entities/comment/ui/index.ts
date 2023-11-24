@@ -1,1 +1,1 @@
-export { CommentList } from './comment-list'
+export { CommentCard } from './comment-card'

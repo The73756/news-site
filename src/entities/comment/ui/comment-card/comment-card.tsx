@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { RoutePath } from '@/app/providers/router'
 import { cls } from '@/shared/lib/class-names'
+import { getFormattedDateTime } from '@/shared/lib/date'
 import { AppLink, Avatar, Skeleton, SkeletonWrapper } from '@/shared/ui'
 import { CommentItem } from '../../model'
 
@@ -11,6 +12,8 @@ interface CommentCardProps {
 }
 
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
+  const date = getFormattedDateTime(comment.createdAt)
+
   if (isLoading) {
     return (
       <SkeletonWrapper className={cls('mb-4 flex gap-3', {}, [className])}>
@@ -34,8 +37,8 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
       </AppLink>
       <div>
         <AppLink to={`${RoutePath.profile}${comment.user.id}`}>{comment.user.username}</AppLink>
-        <time className="ml-1 text-xs opacity-50">12:45</time>
-        <div className="rounded-lg bg-neutral px-3 py-2">{comment.text}</div>
+        <time className="ml-2 text-xs opacity-50">{date}</time>
+        <div className="w-fit rounded-lg bg-neutral px-3 py-2">{comment.text}</div>
       </div>
     </div>
   )

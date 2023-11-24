@@ -1,15 +1,16 @@
-import { memo, useCallback } from 'react'
+import { FormEvent, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/class-names'
 import { DynamicModuleLoader } from '@/shared/lib/dynamic-module-loader'
 import { useAppDispatch } from '@/shared/lib/hooks'
-import { Button, InputWithLabel } from '@/shared/ui'
+import { Button, Input } from '@/shared/ui'
 import {
   addCommentFormActions,
   addCommentFormReducer,
   getAddCommentFormError,
   getAddCommentFormText,
+  sendComment,
 } from '../../model'
 
 interface AddCommentFormProps {
@@ -21,7 +22,7 @@ const reducers = {
 }
 
 const AddCommentForm = memo(({ className }: AddCommentFormProps) => {
-  const { t } = useTranslation('article-details')
+  const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const text = useSelector(getAddCommentFormText)
   const error = useSelector(getAddCommentFormError)
@@ -33,18 +34,30 @@ const AddCommentForm = memo(({ className }: AddCommentFormProps) => {
     [dispatch]
   )
 
+  const onSubmit = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault()
+
+      dispatch(sendComment())
+    },
+    [dispatch]
+  )
+
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={cls('', {}, [className])}>
-        <InputWithLabel
-          label={t('Введите текст комментария')}
-          value={text}
+      <form
+        className={cls('mb-4 flex w-full items-center gap-2', {}, [className])}
+        onSubmit={onSubmit}
+      >
+        <Input
+          className="w-full"
+          placeholder={t('Введите текст комментария')}
+          value={text || ''}
           onChange={onCommentTextChange}
-        >
-          {t('Введите текст комментария')}
-        </InputWithLabel>
-        <Button>{t('Отправить')}</Button>
-      </div>
+        />
+
+        <Button type="submit">{t('Отправить')}</Button>
+      </form>
     </DynamicModuleLoader>
   )
 })

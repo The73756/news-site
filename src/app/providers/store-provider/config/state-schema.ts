@@ -7,7 +7,7 @@ import {
 } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
 import { NavigateFunction } from 'react-router/dist/lib/hooks'
-import { ArticleDetailsSchema } from '@/entities/article/model'
+import { ArticleDetailsSchema } from '@/entities/article'
 import { ProfileSchema } from '@/entities/profile'
 import { UserSchema } from '@/entities/user'
 import { AddCommentFormSchema } from '@/features/add-comment-form'

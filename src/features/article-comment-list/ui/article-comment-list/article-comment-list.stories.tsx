@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { StoreDecorator } from '@/shared/config/storybook'
-import { ArticleCommentList } from './article-comment-list'
+import { ArticleCommentList } from '.'
 
 const meta: Meta<typeof ArticleCommentList> = {
   component: ArticleCommentList,
