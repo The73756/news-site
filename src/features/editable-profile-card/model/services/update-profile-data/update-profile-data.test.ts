@@ -28,7 +28,7 @@ describe('update-profile-data', () => {
         form: data,
       },
     })
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk('1')
 
     expect(mockedAxios.put).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('fulfilled')
@@ -43,7 +43,7 @@ describe('update-profile-data', () => {
         form: data,
       },
     })
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk('1')
 
     expect(result.meta.requestStatus).toBe('rejected')
     expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR])
@@ -55,7 +55,7 @@ describe('update-profile-data', () => {
         form: { ...data, lastname: '' },
       },
     })
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk('1')
 
     expect(result.meta.requestStatus).toBe('rejected')
     expect(result.payload).toEqual([ValidateProfileError.INCORRECT_USER_DATA])

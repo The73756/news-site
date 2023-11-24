@@ -6,9 +6,9 @@ import { validateProfileData } from '../validate-profile-data/validate-profile-d
 
 export const updateProfileData = createAsyncThunk<
   Profile,
-  void,
+  string,
   ThunkConfig<ValidateProfileError[]>
->('profile/updateProfileData', async (_, thunkAPI) => {
+>('profile/updateProfileData', async (profileId, thunkAPI) => {
   const { extra, rejectWithValue, getState } = thunkAPI
 
   const formData = getProfileForm(getState())
@@ -20,7 +20,7 @@ export const updateProfileData = createAsyncThunk<
   }
 
   try {
-    const { data } = await extra.api.put<Profile>('/profile', formData)
+    const { data } = await extra.api.put<Profile>(`/profile/${profileId}`, formData)
 
     // for test mock data
     // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition

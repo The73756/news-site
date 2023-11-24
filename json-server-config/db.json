@@ -21,7 +21,9 @@
       "createdAt": "26.02.2022",
       "author": "The73756",
       "authorAvatar": "https://avatars.githubusercontent.com/u/94830363?v=4",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -107,6 +109,111 @@
       "text": "test comment",
       "createdAt": 1700824217201,
       "id": "bIfVKhj"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "lorem ipsum",
+      "createdAt": 1700824263512,
+      "id": "58OGCPJ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test from widget",
+      "createdAt": 1700824316852,
+      "id": "IXHbpXy"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test",
+      "createdAt": 1700824350129,
+      "id": "xNvsZ7j"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test",
+      "createdAt": 1700824680599,
+      "id": "jSwf14V"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test",
+      "createdAt": 1700824990366,
+      "id": "_6Kz0aw"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "234234",
+      "createdAt": 1700825035254,
+      "id": "dHNjPnP"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "234234",
+      "createdAt": 1700825044653,
+      "id": "hjJsJfT"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hello",
+      "createdAt": 1700825053869,
+      "id": "88spX9N"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123234",
+      "createdAt": 1700825497724,
+      "id": "8nYZsuY"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ban",
+      "createdAt": 1700825507218,
+      "id": "hAN2ppU"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "няя",
+      "createdAt": 1700825520361,
+      "id": "9G4ku6C"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hello there",
+      "createdAt": 1700825544259,
+      "id": "nWRY-gW"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hello",
+      "createdAt": 1700825637157,
+      "id": "3JPK-_w"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "fuck",
+      "createdAt": 1700825642896,
+      "id": "C7YWlZw"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test with fetch",
+      "createdAt": 1700826579488,
+      "id": "hfjIKTV"
     }
   ],
   "users": [
@@ -128,7 +235,7 @@
   "profile": [
     {
       "id": 1,
-      "first": "fasdfasdfsdf",
+      "first": "admin",
       "lastname": "Иванов",
       "age": 11,
       "currency": "RUB",
