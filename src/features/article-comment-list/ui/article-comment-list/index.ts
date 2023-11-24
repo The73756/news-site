@@ -1,1 +1,1 @@
-export { ArticleCommentList } from './article-comment-list'
+export { ArticleCommentListAsync as ArticleCommentList } from './article-comment-list.async'

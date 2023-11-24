@@ -20,7 +20,7 @@ const reducers: ReducersList = {
   articleDetailsComments: articleDetailsCommentsReducer,
 }
 
-export const ArticleCommentList = memo(({ id }: ArticleCommentListProps) => {
+const ArticleCommentList = memo(({ id }: ArticleCommentListProps) => {
   const { t } = useTranslation('article-details')
   const comments = useSelector(getArticleComments.selectAll)
   const commentsIsLoading = useSelector(getArticleCommentListIsLoading)
@@ -37,3 +37,5 @@ export const ArticleCommentList = memo(({ id }: ArticleCommentListProps) => {
     </DynamicModuleLoader>
   )
 })
+
+export default ArticleCommentList
