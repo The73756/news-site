@@ -3,8 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Country, CountrySelect } from '@/entities/country'
 import { Currency, CurrencySelect } from '@/entities/currency'
 import { cls } from '@/shared/lib/class-names'
-import { Avatar, Loader, Text } from '@/shared/ui'
-import { InputWithLabel } from '@/shared/ui/input'
+import { Avatar, InputWithLabel, Loader, Text } from '@/shared/ui'
 import { ProfileSchema } from '../../model'
 
 interface ProfileCardProps extends ProfileSchema {

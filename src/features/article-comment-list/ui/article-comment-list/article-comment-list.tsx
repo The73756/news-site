@@ -29,7 +29,7 @@ export const ArticleCommentList = memo(({ id }: ArticleCommentListProps) => {
   useInitialEffect(() => dispatch(fetchCommentsByArticle(id)))
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
+    <DynamicModuleLoader reducers={reducers}>
       <Header level="h3" className="mb-3 mt-6">
         {t('Комментарии')}
       </Header>
