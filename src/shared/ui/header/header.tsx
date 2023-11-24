@@ -3,12 +3,12 @@ import { memo, PropsWithChildren } from 'react'
 import { cls } from '@/shared/lib/class-names'
 
 export enum HeaderLevelClasses {
-  H1 = 'text-6xl',
-  H2 = 'text-5xl',
-  H3 = 'text-4xl',
-  H4 = 'text-3xl',
-  H5 = 'text-2xl',
-  H6 = 'text-xl',
+  H1 = 'text-5xl',
+  H2 = 'text-4xl',
+  H3 = 'text-3xl',
+  H4 = 'text-2xl',
+  H5 = 'text-xl',
+  H6 = 'text-lg',
 }
 
 export enum HeaderWeightClasses {

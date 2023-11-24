@@ -1,5 +1,5 @@
 import { memo, useCallback } from 'react'
-import { Avatar, Image, Text } from '@/shared/ui'
+import { Avatar, Header, Image, Text } from '@/shared/ui'
 import { Article, ArticleBlock, ArticleBlockType } from '../../model'
 import { ArticleCodeBlockElement } from '../article-code-block-element'
 import { ArticleImageBlockComponent } from '../article-image-block-component'
@@ -34,8 +34,10 @@ export const ArticleDetailsContent = memo(({ article }: ArticleDetailsContentPro
       </div>
 
       <div className="mb-8">
-        <h2 className="text-4xl font-bold">{article?.title}</h2>
-        <Text titleSize="xl" textSize="xl" text={article?.subtitle} />
+        <Header level="h2" weight="bold">
+          {article?.title}
+        </Header>
+        <Text textSize="xl" text={article?.subtitle} />
       </div>
 
       <div className="mb-8 overflow-hidden rounded-xl">

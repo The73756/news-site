@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { CommentList } from '@/entities/comment'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/dynamic-module-loader'
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
-import { Text } from '@/shared/ui'
+import { Header } from '@/shared/ui'
 import {
   articleDetailsCommentsReducer,
   fetchCommentsByArticle,
@@ -30,7 +30,9 @@ export const ArticleCommentList = memo(({ id }: ArticleCommentListProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-      <Text className="my-5" title={t('Комментарии')} titleSize="xl" titleWeight="semibold" />
+      <Header level="h3" className="mb-3 mt-6">
+        {t('Комментарии')}
+      </Header>
       <CommentList isLoading={commentsIsLoading} comments={comments} />
     </DynamicModuleLoader>
   )

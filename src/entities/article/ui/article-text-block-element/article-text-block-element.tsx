@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import { Header } from '@/shared/ui'
 import { ArticleTextBlock } from '../../model'
 
 interface ArticleTextBlockElementProps {
@@ -8,7 +9,11 @@ interface ArticleTextBlockElementProps {
 export const ArticleTextBlockElement = memo(({ block }: ArticleTextBlockElementProps) => {
   return (
     <>
-      {block.title && <h3 className="font mb-4 text-2xl font-semibold">{block.title}</h3>}
+      {block.title && (
+        <Header level="h3" className="mb-3">
+          {block.title}
+        </Header>
+      )}
       {block.paragraphs.map((paragraph) => (
         <p key={paragraph} className="mb-2">
           {paragraph}
