@@ -1,10 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { Suspense } from 'react'
 import { StoreDecorator } from '@/shared/config/storybook'
+import { Loader } from '@/shared/ui'
 import { ArticleCommentBlock } from './article-comment-block'
 
 const meta: Meta<typeof ArticleCommentBlock> = {
   component: ArticleCommentBlock,
   title: 'widgets/article-comment-block',
+  decorators: [
+    (Story) => (
+      <Suspense fallback={<Loader />}>
+        <Story />
+      </Suspense>
+    ),
+  ],
 }
 
 export default meta
@@ -71,6 +80,21 @@ export const Loading: Story = {
   decorators: [
     StoreDecorator({
       articleDetailsComments: { ...data, isLoading: true },
+      addCommentForm: {
+        text: '',
+        error: '',
+      },
+    }),
+  ],
+}
+
+export const Error: Story = {
+  args: {
+    id: '1',
+  },
+  decorators: [
+    StoreDecorator({
+      articleDetailsComments: { ...data, error: 'error!' },
       addCommentForm: {
         text: '',
         error: '',

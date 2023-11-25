@@ -7,13 +7,11 @@ import { CommentItem } from '../../model'
 
 interface CommentCardProps {
   className?: string
-  comment: CommentItem
+  comment?: CommentItem
   isLoading?: boolean
 }
 
 export const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
-  const date = getFormattedDateTime(comment.createdAt)
-
   if (isLoading) {
     return (
       <SkeletonWrapper className={cls('mb-4 flex gap-3', {}, [className])}>
@@ -29,6 +27,10 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
       </SkeletonWrapper>
     )
   }
+
+  if (!comment) return null
+
+  const date = getFormattedDateTime(comment.createdAt)
 
   return (
     <div className={cls('mb-4 flex gap-3', {}, [className])}>

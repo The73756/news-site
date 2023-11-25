@@ -3,5 +3,6 @@
   "Произошла ошибка при загрузке статьи": "An error occurred while loading the article",
   "Попробуйте обновить страницу": "Try refreshing the page",
   "Комментарии": "Comments",
-  "Комментариев нет": "No comments yet"
+  "Комментариев нет": "No comments yet",
+  "Произошла ошибка при загрузке комментариев": "An error occurred while loading comments"
 }
