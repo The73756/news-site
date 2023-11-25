@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { Suspense } from 'react'
 import { StoreDecorator } from '@/shared/config/storybook'
+import { Loader } from '@/shared/ui'
 import { ArticleCommentList } from '.'
 
 const meta: Meta<typeof ArticleCommentList> = {
@@ -19,6 +21,7 @@ const data = {
         username: 'admin',
         avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
       },
+      createdAt: 1700825044653,
     },
     '2': {
       id: '2',
@@ -29,6 +32,7 @@ const data = {
         username: 'admin',
         avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
       },
+      createdAt: 1700825044653,
     },
     '3': {
       id: '3',
@@ -39,6 +43,7 @@ const data = {
         username: 'admin',
         avatar: 'https://avatars.githubusercontent.com/u/94830363?v=4',
       },
+      createdAt: 1700825044653,
     },
   },
 }
@@ -51,6 +56,11 @@ export const Basic: Story = {
     StoreDecorator({
       articleDetailsComments: data,
     }),
+    (Story) => (
+      <Suspense fallback={<Loader />}>
+        <Story />
+      </Suspense>
+    ),
   ],
 }
 

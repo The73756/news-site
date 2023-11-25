@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { StoreDecorator } from '@/shared/config/storybook'
 import { AddCommentForm } from '.'
 
 const meta: Meta<typeof AddCommentForm> = {
@@ -9,4 +10,13 @@ const meta: Meta<typeof AddCommentForm> = {
 export default meta
 type Story = StoryObj<typeof AddCommentForm>
 
-export const Basic: Story = {}
+export const Basic: Story = {
+  decorators: [
+    StoreDecorator({
+      addCommentForm: {
+        text: '',
+        error: '',
+      },
+    }),
+  ],
+}

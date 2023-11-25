@@ -18,7 +18,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   return (
     <>
-      <ArticleDetails id={id} />
+      <ArticleDetails id={id} className="mb-6" />
       <ArticleCommentBlock id={id} />
     </>
   )
