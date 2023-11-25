@@ -1,1 +1,1 @@
-export { addCommentForArticle } from './services/addCommentForArticle'
+export { addCommentForArticle } from './services/add-comment-for-article'

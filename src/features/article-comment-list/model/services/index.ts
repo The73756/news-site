@@ -1,1 +1,1 @@
-export { fetchCommentsByArticle } from './fetchCommentsByArticle/fetchCommentsByArticle'
+export { fetchCommentsByArticle } from './fetch-comments-by-article/fetch-comments-by-article'

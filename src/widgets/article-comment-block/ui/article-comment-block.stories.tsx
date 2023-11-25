@@ -4,7 +4,7 @@ import { ArticleCommentBlock } from './article-comment-block'
 
 const meta: Meta<typeof ArticleCommentBlock> = {
   component: ArticleCommentBlock,
-  title: 'widgets/comment-block',
+  title: 'widgets/article-comment-block',
 }
 
 export default meta
