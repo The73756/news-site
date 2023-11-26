@@ -26,8 +26,6 @@ export const ArticleDetailsContent = memo(({ article }: ArticleDetailsContentPro
     }
   }, [])
 
-  console.log('article-details-content [article]', article)
-
   return (
     <>
       <div className="mb-3 flex items-center gap-4">

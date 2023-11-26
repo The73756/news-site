@@ -5,6 +5,7 @@ import { cls } from '@/shared/lib/class-names'
 import { getFormattedDate } from '@/shared/lib/date'
 import { Avatar, Button, Header, Icon, Image, Text } from '@/shared/ui'
 import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from '../../model'
+import { ArticleTileItem } from './article-tile-item'
 
 interface ArticleListItemProps {
   className?: string
@@ -16,47 +17,7 @@ export const ArticleListItem = memo(({ className, article, view }: ArticleListIt
   const articleDate = getFormattedDate(article.createdAt)
 
   if (view === ArticleView.TILE) {
-    return (
-      <Link
-        to={`${RoutePath.article_detail}${article.id}`}
-        className={cls(
-          'card cursor-pointer bg-base-100 shadow-xl shadow-base-300 transition-colors hover:bg-base-200',
-          {},
-          [className]
-        )}
-      >
-        <figure>
-          <Image
-            loaderHeight={250}
-            src={article.img}
-            className="max-h-[250px]"
-            alt={article.title}
-          />
-        </figure>
-        <div className="card-body">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <Header level="h2" custom className="card-title">
-              {article.title}
-            </Header>
-            <time dateTime={articleDate}>{articleDate}</time>
-          </div>
-
-          <div className="card-actions justify-between">
-            <div className="flex items-center gap-1">
-              {article.views}
-              <Icon name="shared/eye" />
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {article.type.map((type) => (
-                <div key={type} className="badge-primary badge-outline badge badge-lg ">
-                  {type}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Link>
-    )
+    return <ArticleTileItem article={article} />
   }
 
   const articleTextBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as
