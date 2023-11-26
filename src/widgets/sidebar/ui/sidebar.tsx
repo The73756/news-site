@@ -1,8 +1,9 @@
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 import { cls } from '@/shared/lib/class-names'
 import { Button, Icon, LangSwitcher, ThemeSwitcher } from '@/shared/ui'
 import { SidebarItem } from '@/widgets/sidebar/ui/sidebar-item'
-import { SidebarItemsList } from '../model'
+import { getSidebarItems } from '../model'
 
 interface SidebarProps {
   className?: string
@@ -10,6 +11,7 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const sidebarItemsList = useSelector(getSidebarItems)
 
   const toggleCollapsed = () => {
     setIsCollapsed((prev) => !prev)
@@ -32,7 +34,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
               'gap-3': !isCollapsed,
             })}
           >
-            {SidebarItemsList.map((item) => (
+            {sidebarItemsList.map((item) => (
               <li key={item.path} className="flex items-center gap-1">
                 <SidebarItem item={item} isCollapsed={isCollapsed} />
               </li>
