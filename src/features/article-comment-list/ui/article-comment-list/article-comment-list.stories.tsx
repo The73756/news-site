@@ -54,7 +54,7 @@ type Story = StoryObj<typeof ArticleCommentList>
 export const Basic: Story = {
   decorators: [
     StoreDecorator({
-      articleDetailsComments: data,
+      articleDetailsComments: { ...data, isLoading: false },
     }),
     (Story) => (
       <Suspense fallback={<Loader />}>

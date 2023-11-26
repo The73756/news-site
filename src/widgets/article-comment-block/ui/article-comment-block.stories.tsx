@@ -64,7 +64,7 @@ export const Basic: Story = {
   },
   decorators: [
     StoreDecorator({
-      articleDetailsComments: data,
+      articleDetailsComments: { ...data, isLoading: false },
       addCommentForm: {
         text: '',
         error: '',
@@ -94,7 +94,7 @@ export const Error: Story = {
   },
   decorators: [
     StoreDecorator({
-      articleDetailsComments: { ...data, error: 'error!' },
+      articleDetailsComments: { ...data, error: 'error!', isLoading: false },
       addCommentForm: {
         text: '',
         error: '',

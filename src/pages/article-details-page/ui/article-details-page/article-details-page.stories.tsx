@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import { Suspense } from 'react'
 import { ArticleBlockType, ArticleType } from '@/entities/article/model'
 import { StoreDecorator } from '@/shared/config/storybook'
+import { PageLoader } from '@/widgets/page-loader'
 import ArticleDetailsPage from './article-details-page'
 
 const meta: Meta<typeof ArticleDetailsPage> = {
@@ -12,6 +14,13 @@ const meta: Meta<typeof ArticleDetailsPage> = {
       routeParams: { id: 1 },
     },
   },
+  decorators: [
+    (Story) => (
+      <Suspense fallback={<PageLoader />}>
+        <Story />
+      </Suspense>
+    ),
+  ],
 }
 
 export default meta
@@ -104,7 +113,7 @@ export const Basic: Story = {
   decorators: [
     StoreDecorator({
       articleDetails: article,
-      articleDetailsComments: comments,
+      articleDetailsComments: { ...comments, isLoading: false },
     }),
   ],
 }
@@ -122,6 +131,7 @@ export const Error: Story = {
   decorators: [
     StoreDecorator({
       articleDetails: { error: 'Error!' },
+      articleDetailsComments: { ...comments, isLoading: false },
     }),
   ],
 }

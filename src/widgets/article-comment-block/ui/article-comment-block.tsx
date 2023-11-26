@@ -1,5 +1,7 @@
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { getArticleDetailsError } from '@/entities/article'
 import { AddCommentForm } from '@/features/add-comment-form'
 import { ArticleCommentList } from '@/features/article-comment-list'
 import { cls } from '@/shared/lib/class-names'
@@ -14,6 +16,7 @@ interface CommentBlockProps {
 
 export const ArticleCommentBlock = memo(({ className, id }: CommentBlockProps) => {
   const { t } = useTranslation('article-details')
+  const error = useSelector(getArticleDetailsError)
   const dispatch = useAppDispatch()
 
   const onSendComment = useCallback(
@@ -22,6 +25,10 @@ export const ArticleCommentBlock = memo(({ className, id }: CommentBlockProps) =
     },
     [dispatch]
   )
+
+  if (error) {
+    return null
+  }
 
   return (
     <div className={cls('', {}, [className])}>

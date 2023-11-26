@@ -32,6 +32,12 @@ const profileData: ProfileSchema = {
 const meta: Meta<typeof ProfilePage> = {
   component: ProfilePage,
   title: 'pages/profile-page',
+  parameters: {
+    reactRouter: {
+      routePath: '/:id',
+      routeParams: { id: 1 },
+    },
+  },
 }
 
 export default meta
@@ -74,6 +80,24 @@ export const Loading: Story = {
 }
 
 export const WithError: Story = {
+  decorators: [
+    StoreDecorator({
+      profile: {
+        ...profileData,
+        isLoading: false,
+        readonly: true,
+        error: 'Error!',
+      },
+    }),
+  ],
+}
+
+export const NotFound: Story = {
+  parameters: {
+    reactRouter: {
+      routePath: '/',
+    },
+  },
   decorators: [
     StoreDecorator({
       profile: {
