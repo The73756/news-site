@@ -12,7 +12,11 @@ export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<st
     }
 
     try {
-      const { data } = await extra.api.get<Article>('/articles/' + articleId)
+      const { data } = await extra.api.get<Article>('/articles/' + articleId, {
+        params: {
+          _expand: 'user',
+        },
+      })
       // for test mock data
       // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       if (!data) {
