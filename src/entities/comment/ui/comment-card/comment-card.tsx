@@ -40,7 +40,9 @@ export const CommentCard = memo(({ className, comment, isLoading }: CommentCardP
       <div>
         <AppLink to={`${RoutePath.profile}${comment.user.id}`}>{comment.user.username}</AppLink>
         <time className="ml-2 text-xs opacity-50">{date}</time>
-        <div className="w-fit rounded-lg bg-neutral px-3 py-2">{comment.text}</div>
+        <div className="w-fit rounded-lg bg-base-300 px-3 py-2 text-base-content">
+          {comment.text}
+        </div>
       </div>
     </div>
   )

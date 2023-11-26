@@ -1,4 +1,5 @@
 import { memo, useCallback } from 'react'
+import { getFormattedDate } from '@/shared/lib/date'
 import { Avatar, Header, Image, Text } from '@/shared/ui'
 import { Article, ArticleBlock, ArticleBlockType } from '../../model'
 import { ArticleCodeBlockElement } from '../article-code-block-element'
@@ -10,6 +11,8 @@ interface ArticleDetailsContentProps {
 }
 
 export const ArticleDetailsContent = memo(({ article }: ArticleDetailsContentProps) => {
+  const articleDate = getFormattedDate(article?.createdAt || 0)
+
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
       case ArticleBlockType.CODE:
@@ -23,13 +26,15 @@ export const ArticleDetailsContent = memo(({ article }: ArticleDetailsContentPro
     }
   }, [])
 
+  console.log('article-details-content [article]', article)
+
   return (
     <>
       <div className="mb-3 flex items-center gap-4">
-        <Avatar size={40} src={String(article?.authorAvatar)} />
+        <Avatar size={40} src={String(article?.user.avatar)} />
         <div className="flex items-center gap-2">
-          <Text title={article?.author} titleWeight="semibold" />
-          <time dateTime={article?.createdAt}>{article?.createdAt}</time>
+          <Text title={article?.user.username} titleWeight="semibold" />
+          <time dateTime={articleDate}>{articleDate}</time>
         </div>
       </div>
 

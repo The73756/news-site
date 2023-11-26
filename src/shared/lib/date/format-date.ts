@@ -9,3 +9,14 @@ export const getFormattedDateTime = (milliseconds: number) => {
   }
   return date.toLocaleString(undefined, options)
 }
+
+export const getFormattedDate = (milliseconds: number) => {
+  const date = new Date(milliseconds)
+  const options: Intl.DateTimeFormatOptions = {
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric',
+  }
+
+  return date.toLocaleString(undefined, options)
+}

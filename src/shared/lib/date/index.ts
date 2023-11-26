@@ -1,1 +1,1 @@
-export { getFormattedDateTime } from './format-date'
+export { getFormattedDate, getFormattedDateTime } from './format-date'

@@ -1,2 +1,7 @@
-export { ArticleDetailsSchema, getArticleDetails, getArticleDetailsError } from './model'
-export { ArticleDetails } from './ui'
+export {
+  ArticleDetailsSchema,
+  ArticleView,
+  getArticleDetails,
+  getArticleDetailsError,
+} from './model'
+export { ArticleDetails, ArticleList } from './ui'
