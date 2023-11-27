@@ -29,7 +29,7 @@ export const ArticleListItemLoader = memo(({ className, view }: ArticleListItemL
 
   return (
     <SkeletonWrapper className={cls('card', {}, [className])}>
-      <div className="card-body px-0">
+      <div className="card-body px-0 pt-0">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-4">
             <Skeleton

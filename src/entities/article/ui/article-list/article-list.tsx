@@ -14,7 +14,7 @@ interface ArticleListProps {
 
 export const ArticleList = memo(
   ({ className, articles, view = ArticleView.TILE, isLoading = false }: ArticleListProps) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation('articles')
     const containerClass = cls(
       '',
       {
