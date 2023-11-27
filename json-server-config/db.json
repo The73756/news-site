@@ -11,14 +11,14 @@
       "userId": "2"
     }
   ],
-   "articles": [
+  "articles": [
     {
       "id": "1",
       "title": "Javascript news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
-       "createdAt": 1700977685870,
+      "createdAt": 1700977685870,
       "userId": "1",
       "type": [
         "IT"
@@ -361,6 +361,27 @@
       "text": "test with fetch",
       "createdAt": 1700826579488,
       "id": "hfjIKTV"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "Первый комментарий ура!",
+      "createdAt": 1701042758207,
+      "id": "yGQjWss"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "мяу",
+      "createdAt": 1701046843983,
+      "id": "eIg2yrq"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "аляалялляллялялэ",
+      "createdAt": 1701047076039,
+      "id": "_RTiCrt"
     }
   ],
   "users": [
@@ -382,7 +403,7 @@
   "profile": [
     {
       "id": "1",
-      "first": "admin",
+      "first": "The73756",
       "lastname": "Иванов",
       "age": 11,
       "currency": "RUB",
