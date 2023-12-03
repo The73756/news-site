@@ -33,7 +33,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
 
   let content
 
-  if (isLoading) {
+  if (isLoading || isLoading === undefined) {
     content = <ArticleDetailsLoader />
   } else if (error) {
     content = <ArticleDetailsError />

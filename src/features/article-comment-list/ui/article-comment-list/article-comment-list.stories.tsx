@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Suspense } from 'react'
 import { StoreDecorator } from '@/shared/config/storybook'
-import { Loader } from '@/shared/ui'
 import { ArticleCommentList } from '.'
 
 const meta: Meta<typeof ArticleCommentList> = {
@@ -56,11 +54,6 @@ export const Basic: Story = {
     StoreDecorator({
       articleDetailsComments: { ...data, isLoading: false },
     }),
-    (Story) => (
-      <Suspense fallback={<Loader />}>
-        <Story />
-      </Suspense>
-    ),
   ],
 }
 

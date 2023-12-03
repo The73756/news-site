@@ -21,7 +21,7 @@ const reducers = {
   addCommentForm: addCommentFormReducer,
 }
 
-const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
+export const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const text = useSelector(getAddCommentFormText)
@@ -65,5 +65,3 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
     </DynamicModuleLoader>
   )
 })
-
-export default AddCommentForm

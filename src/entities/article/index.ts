@@ -1,4 +1,5 @@
 export {
+  Article,
   ArticleDetailsSchema,
   ArticleView,
   getArticleDetails,
