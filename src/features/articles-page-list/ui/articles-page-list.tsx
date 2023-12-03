@@ -1,10 +1,11 @@
 import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { ArticleList } from '@/entities/article'
-import { articlesPageListReducer } from '@/features/articles-page-list'
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/dynamic-module-loader'
 import { useAppDispatch, useInitialEffect } from '@/shared/lib/hooks'
 import {
+  articlesPageListActions,
+  articlesPageListReducer,
   fetchArticlesList,
   getArticles,
   getArticlesPageListLoading,
@@ -23,6 +24,7 @@ export const ArticlesPageList = memo(() => {
 
   useInitialEffect(() => {
     dispatch(fetchArticlesList())
+    dispatch(articlesPageListActions.initState())
   })
 
   return (

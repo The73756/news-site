@@ -1,6 +1,7 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { StateSchema } from '@/app/providers/store-provider'
 import { Article, ArticleView } from '@/entities/article'
+import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '@/shared/constants/localstorage'
 import { fetchArticlesList } from '../services'
 import { ArticlesPageListSchema } from '../types/articles-page-list-schema'
 
@@ -24,6 +25,12 @@ export const articlesPageListSlice = createSlice({
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
       state.view = action.payload
+      localStorage.setItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY, action.payload)
+    },
+    initState: (state) => {
+      state.view =
+        (localStorage.getItem(ARTICLE_VIEW_LOCAL_STORAGE_KEY) as ArticleView | null) ||
+        ArticleView.TILE
     },
   },
   extraReducers: (builder) => {

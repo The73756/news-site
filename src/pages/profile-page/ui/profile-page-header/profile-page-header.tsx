@@ -24,11 +24,6 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   const dispatch = useAppDispatch()
   const readonly = useSelector(getProfileReadonly)
 
-  console.log({
-    authData,
-    profileData,
-  })
-
   const canEdit = String(authData?.id) === String(profileData?.id)
 
   const onEdit = useCallback(() => {
